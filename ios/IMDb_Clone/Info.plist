@@ -36,7 +36,7 @@
 		</dict>
 	</dict>
 	<key>NSLocationWhenInUseUsageDescription</key>
-	<string></string>
+	<string/>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIRequiredDeviceCapabilities</key>
@@ -51,5 +51,21 @@
 	</array>
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<false/>
+	<key>UIAppFonts</key>
+	<array>
+		<string>Amazon Ember Cd RC Bold.otf</string>
+		<string>Amazon Ember Cd RC.otf</string>
+		<string>Amazon Ember Bold Italic.ttf</string>
+		<string>Amazon Ember Bold.ttf</string>
+		<string>Amazon Ember Cd RC Bold Italic.ttf</string>
+		<string>Amazon Ember Heavy Italic.ttf</string>
+		<string>Amazon Ember Heavy.ttf</string>
+		<string>Amazon Ember Italic.ttf</string>
+		<string>Amazon Ember Light Italic.ttf</string>
+		<string>Amazon Ember Light.ttf</string>
+		<string>Amazon Ember Thin Italic.ttf</string>
+		<string>Amazon Ember Thin.ttf</string>
+		<string>Amazon Ember.ttf</string>
+	</array>
 </dict>
 </plist>

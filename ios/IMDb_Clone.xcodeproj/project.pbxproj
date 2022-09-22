@@ -14,6 +14,19 @@
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		7699B88040F8A987B510C191 /* libPods-IMDb_Clone-IMDb_CloneTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 19F6CBCC0A4E27FBF8BF4A61 /* libPods-IMDb_Clone-IMDb_CloneTests.a */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
+		8687D5DC0773481795E36CB6 /* Amazon Ember Cd RC Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = AAD9033B02F14D338D8F3477 /* Amazon Ember Cd RC Bold.otf */; };
+		111B9D6092B64D2E996D1573 /* Amazon Ember Cd RC.otf in Resources */ = {isa = PBXBuildFile; fileRef = E85AE463BCC24120B108DB87 /* Amazon Ember Cd RC.otf */; };
+		82FAFF22D3964A38AFECFD64 /* Amazon Ember Bold Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EA93C9F92473420496BD477A /* Amazon Ember Bold Italic.ttf */; };
+		949523EDCFD746C3B668CB2B /* Amazon Ember Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 69DF0D2BE5014B67BD7C0F09 /* Amazon Ember Bold.ttf */; };
+		85BBFBAA8716463697FE1795 /* Amazon Ember Cd RC Bold Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0677F40BA90143D897F5F9B5 /* Amazon Ember Cd RC Bold Italic.ttf */; };
+		BD8A4C3F0AD04E17BF490796 /* Amazon Ember Heavy Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CA1737D7B2FE4785B1CC29A9 /* Amazon Ember Heavy Italic.ttf */; };
+		07E79F594CE54CAB8B84F1C4 /* Amazon Ember Heavy.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 53EAB424778B4440B36AA461 /* Amazon Ember Heavy.ttf */; };
+		B1E816DCA98641FFA7942399 /* Amazon Ember Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 11FECECEF69C46059B71F8D1 /* Amazon Ember Italic.ttf */; };
+		EA0823DA53204E4FA961FCE4 /* Amazon Ember Light Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 56B3FB2D34B54B5FAFD5E2DE /* Amazon Ember Light Italic.ttf */; };
+		A1F763006397495387202D2B /* Amazon Ember Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6EF01377C0B640659F905F30 /* Amazon Ember Light.ttf */; };
+		B9652B14060044C7B76E2B8A /* Amazon Ember Thin Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FB7B023DEB9440569829CCFE /* Amazon Ember Thin Italic.ttf */; };
+		C5115C3AD45344CBA2F9521F /* Amazon Ember Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 63369020E6B4499D8EF3DE9B /* Amazon Ember Thin.ttf */; };
+		2A4DAC329CA3474D810908AB /* Amazon Ember.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7CB9F5FAC1034EC2A84A19A9 /* Amazon Ember.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +57,19 @@
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = IMDb_Clone/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		89C6BE57DB24E9ADA2F236DE /* Pods-IMDb_Clone-IMDb_CloneTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IMDb_Clone-IMDb_CloneTests.release.xcconfig"; path = "Target Support Files/Pods-IMDb_Clone-IMDb_CloneTests/Pods-IMDb_Clone-IMDb_CloneTests.release.xcconfig"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
+		AAD9033B02F14D338D8F3477 /* Amazon Ember Cd RC Bold.otf */ = {isa = PBXFileReference; name = "Amazon Ember Cd RC Bold.otf"; path = "../src/assets/fonts/Amazon Ember Cd RC Bold.otf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		E85AE463BCC24120B108DB87 /* Amazon Ember Cd RC.otf */ = {isa = PBXFileReference; name = "Amazon Ember Cd RC.otf"; path = "../src/assets/fonts/Amazon Ember Cd RC.otf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		EA93C9F92473420496BD477A /* Amazon Ember Bold Italic.ttf */ = {isa = PBXFileReference; name = "Amazon Ember Bold Italic.ttf"; path = "../src/assets/fonts/Amazon Ember Bold Italic.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		69DF0D2BE5014B67BD7C0F09 /* Amazon Ember Bold.ttf */ = {isa = PBXFileReference; name = "Amazon Ember Bold.ttf"; path = "../src/assets/fonts/Amazon Ember Bold.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		0677F40BA90143D897F5F9B5 /* Amazon Ember Cd RC Bold Italic.ttf */ = {isa = PBXFileReference; name = "Amazon Ember Cd RC Bold Italic.ttf"; path = "../src/assets/fonts/Amazon Ember Cd RC Bold Italic.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		CA1737D7B2FE4785B1CC29A9 /* Amazon Ember Heavy Italic.ttf */ = {isa = PBXFileReference; name = "Amazon Ember Heavy Italic.ttf"; path = "../src/assets/fonts/Amazon Ember Heavy Italic.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		53EAB424778B4440B36AA461 /* Amazon Ember Heavy.ttf */ = {isa = PBXFileReference; name = "Amazon Ember Heavy.ttf"; path = "../src/assets/fonts/Amazon Ember Heavy.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		11FECECEF69C46059B71F8D1 /* Amazon Ember Italic.ttf */ = {isa = PBXFileReference; name = "Amazon Ember Italic.ttf"; path = "../src/assets/fonts/Amazon Ember Italic.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		56B3FB2D34B54B5FAFD5E2DE /* Amazon Ember Light Italic.ttf */ = {isa = PBXFileReference; name = "Amazon Ember Light Italic.ttf"; path = "../src/assets/fonts/Amazon Ember Light Italic.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		6EF01377C0B640659F905F30 /* Amazon Ember Light.ttf */ = {isa = PBXFileReference; name = "Amazon Ember Light.ttf"; path = "../src/assets/fonts/Amazon Ember Light.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		FB7B023DEB9440569829CCFE /* Amazon Ember Thin Italic.ttf */ = {isa = PBXFileReference; name = "Amazon Ember Thin Italic.ttf"; path = "../src/assets/fonts/Amazon Ember Thin Italic.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		63369020E6B4499D8EF3DE9B /* Amazon Ember Thin.ttf */ = {isa = PBXFileReference; name = "Amazon Ember Thin.ttf"; path = "../src/assets/fonts/Amazon Ember Thin.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		7CB9F5FAC1034EC2A84A19A9 /* Amazon Ember.ttf */ = {isa = PBXFileReference; name = "Amazon Ember.ttf"; path = "../src/assets/fonts/Amazon Ember.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,6 +148,7 @@
 				83CBBA001A601CBA00E9B192 /* Products */,
 				2D16E6871FA4F8E400B85C8A /* Frameworks */,
 				BBD78D7AC51CEA395F1C20DB /* Pods */,
+				F2F81BA74E87481D91C91F45 /* Resources */,
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
@@ -147,6 +174,27 @@
 			);
 			path = Pods;
 			sourceTree = "<group>";
+		};
+		F2F81BA74E87481D91C91F45 /* Resources */ = {
+			isa = "PBXGroup";
+			children = (
+				AAD9033B02F14D338D8F3477 /* Amazon Ember Cd RC Bold.otf */,
+				E85AE463BCC24120B108DB87 /* Amazon Ember Cd RC.otf */,
+				EA93C9F92473420496BD477A /* Amazon Ember Bold Italic.ttf */,
+				69DF0D2BE5014B67BD7C0F09 /* Amazon Ember Bold.ttf */,
+				0677F40BA90143D897F5F9B5 /* Amazon Ember Cd RC Bold Italic.ttf */,
+				CA1737D7B2FE4785B1CC29A9 /* Amazon Ember Heavy Italic.ttf */,
+				53EAB424778B4440B36AA461 /* Amazon Ember Heavy.ttf */,
+				11FECECEF69C46059B71F8D1 /* Amazon Ember Italic.ttf */,
+				56B3FB2D34B54B5FAFD5E2DE /* Amazon Ember Light Italic.ttf */,
+				6EF01377C0B640659F905F30 /* Amazon Ember Light.ttf */,
+				FB7B023DEB9440569829CCFE /* Amazon Ember Thin Italic.ttf */,
+				63369020E6B4499D8EF3DE9B /* Amazon Ember Thin.ttf */,
+				7CB9F5FAC1034EC2A84A19A9 /* Amazon Ember.ttf */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+			path = "";
 		};
 /* End PBXGroup section */
 
@@ -244,6 +292,19 @@
 			files = (
 				81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
+				8687D5DC0773481795E36CB6 /* Amazon Ember Cd RC Bold.otf in Resources */,
+				111B9D6092B64D2E996D1573 /* Amazon Ember Cd RC.otf in Resources */,
+				82FAFF22D3964A38AFECFD64 /* Amazon Ember Bold Italic.ttf in Resources */,
+				949523EDCFD746C3B668CB2B /* Amazon Ember Bold.ttf in Resources */,
+				85BBFBAA8716463697FE1795 /* Amazon Ember Cd RC Bold Italic.ttf in Resources */,
+				BD8A4C3F0AD04E17BF490796 /* Amazon Ember Heavy Italic.ttf in Resources */,
+				07E79F594CE54CAB8B84F1C4 /* Amazon Ember Heavy.ttf in Resources */,
+				B1E816DCA98641FFA7942399 /* Amazon Ember Italic.ttf in Resources */,
+				EA0823DA53204E4FA961FCE4 /* Amazon Ember Light Italic.ttf in Resources */,
+				A1F763006397495387202D2B /* Amazon Ember Light.ttf in Resources */,
+				B9652B14060044C7B76E2B8A /* Amazon Ember Thin Italic.ttf in Resources */,
+				C5115C3AD45344CBA2F9521F /* Amazon Ember Thin.ttf in Resources */,
+				2A4DAC329CA3474D810908AB /* Amazon Ember.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
