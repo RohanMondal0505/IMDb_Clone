@@ -7,14 +7,14 @@ export const CustomColors = {
 export const CustomDarkColors = {
     //Fix Colors
     primaryColor: '#F5C518',
-    headingTextColor: '#127BAB',
+    headingTextColor: '#18A4E4', //127BAB
     statusbarColor: '#1d1d1d',
     plusIconBackgroundColor: '#686868',
 
     //Change Colors
     mainBackgroundColor: '#191919',
     componentsBackgroundColor: '#212121',
-    textColor:'#fff',
+    textColor: '#fff',
     inActiveIconColor: '#9E9E9E',
     activeIconColor: '#F5C518',
     bottomBarColor: '#1D1D1D',
@@ -24,7 +24,7 @@ export const CustomDarkColors = {
 export const CustomLightColors = {
     //Fix Colors
     primaryColor: '#F5C518',
-    headingTextColor: '#127BAB',
+    headingTextColor: '#18A4E4',
     statusbarColor: '#1d1d1d',
     plusIconBackgroundColor: '#686868',
 
