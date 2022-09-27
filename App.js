@@ -1,42 +1,44 @@
 import React, {useEffect, useState} from 'react';
-import {StatusBar, Text, View} from 'react-native';
+import {StyleSheet, Text, View} from 'react-native';
 import {CustomColors} from './src/assets/values/CustomColors';
-
-const api_key = '8894618af4b86f3c23dd27487dd2be5a';
-const url = `https://api.themoviedb.org/3/trending/all/week?api_key=${api_key}`;
+import {CustomFonts} from './src/assets/values/CustomFonts';
+import { Strings } from './src/assets/values/Strings';
+import RootNavigation from './src/navigation/RootNavigation';
 
 const App = () => {
-    const [trendingMovies, setTrendingMovies] = useState([]);
-
-    const TMDb = async () => {
-        try {
-            const response = await fetch(url);
-            const data = await response.json();
-            setTrendingMovies(data.results);
-        } catch (error) {
-            console.log('Errors: => ', error.message);
-        }
-    };
+    const [isLoading, setIsLoading] = useState(false);
 
     useEffect(() => {
-        TMDb();
+        setTimeout(() => {
+            setIsLoading(false)
+        }, 1000);
     }, []);
 
     return (
-        <View style={{flex: 1, backgroundColor: CustomColors.secondaryColor}}>
-            <Text
-                onPress={() => {
-                    setActive(true);
-                }}
-                style={{fontSize: 30, fontWeight: 'bold', textAlign: 'center'}}>
-                Active
-            </Text>
-            <StatusBar
-                backgroundColor={CustomColors.primaryColor}
-                barStyle="dark-content"
-            />
-        </View>
+        <>
+            {isLoading ? (
+                <View style={styles.Splash}>
+                    <Text style={styles.Text}>{Strings.app_Name}</Text>
+                </View>
+            ) : (
+                <RootNavigation />
+            )}
+        </>
     );
 };
 
 export default App;
+
+const styles = StyleSheet.create({
+    Splash: {
+        flex: 1,
+        justifyContent: 'center',
+        alignItems: 'center',
+        backgroundColor: CustomColors.primaryColor,
+    },
+    Text: {
+        fontSize: 200,
+        fontFamily: CustomFonts.Bold,
+        color: CustomColors.black,
+    },
+});

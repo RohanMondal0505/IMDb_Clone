@@ -1,24 +1,62 @@
-import { useTheme } from '@react-navigation/native';
-import React from 'react';
-import {Text, View} from 'react-native';
+import {useNetInfo} from '@react-native-community/netinfo';
+import {useTheme} from '@react-navigation/native';
+import React, {useState} from 'react';
+import {
+    RefreshControl,
+    SafeAreaView,
+    ScrollView,
+    StyleSheet,
+} from 'react-native';
+import ConnectionLostView from '../components/home/ConnectionLostView';
+import MoviesSlider from '../components/home/MoviesSlider';
 
-import FontAwesome from 'react-native-vector-icons/FontAwesome';
-import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
-
-const HomeScreen = ({ navigation }) => {
+const HomeScreen = ({navigation}) => {
     const {colors} = useTheme();
-    
+    const netInfo = useNetInfo();
+    const [refreshing, setRefreshing] = useState(false);
+
+    const onRefresh = React.useCallback(() => {
+        setRefreshing(true);
+        setTimeout(() => setRefreshing(false), 3000);
+    }, []);
+
+    const styles = StyleSheet.create({
+        MainContainer: {
+            flex: 1,
+            backgroundColor: colors.mainBackgroundColor,
+        },
+        container: {
+            flex: 1,
+            paddingTop: 10,
+            // borderColor: 'red',
+            // borderWidth: 1,
+        },
+    });
+
     return (
-        <View
-            style={{
-                flex: 1,
-                backgroundColor: colors.mainBackgroundColor,
-            }}>
-            <Text style={{color: colors.textColor}}>HomeScreen</Text>
-            <FontAwesome5 name="user-alt" color={'red'} size={50} />
-            <FontAwesome5 name="user-circle" color={'red'} size={50} />
-            <FontAwesome name="user-circle" color={'red'} size={50} />
-        </View>
+        <SafeAreaView style={styles.MainContainer}>
+            {netInfo.isInternetReachable ? (
+                <ScrollView
+                    refreshControl={
+                        <RefreshControl
+                            refreshing={refreshing}
+                            onRefresh={onRefresh}
+                            tintColor={colors.primaryColor}
+                            colors={[
+                                colors.primaryColor,
+                                colors.headingTextColor,
+                            ]}
+                        />
+                    }
+                    contentContainerStyle={styles.container}>
+                    <MoviesSlider />
+                    {/* <PopularSection title={Strings.Popular_Movies}/> */}
+                    {/* <PopularSection title={Strings.Popular_TV}/> */}
+                </ScrollView>
+            ) : (
+                <ConnectionLostView />
+            )}
+        </SafeAreaView>
     );
 };
 
