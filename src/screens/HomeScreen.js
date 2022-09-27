@@ -7,8 +7,10 @@ import {
     ScrollView,
     StyleSheet,
 } from 'react-native';
+import {Strings} from '../assets/values/Strings';
 import ConnectionLostView from '../components/home/ConnectionLostView';
 import MoviesSlider from '../components/home/MoviesSlider';
+import PopularSection from '../components/home/PopularSection';
 
 const HomeScreen = ({navigation}) => {
     const {colors} = useTheme();
@@ -50,7 +52,7 @@ const HomeScreen = ({navigation}) => {
                     }
                     contentContainerStyle={styles.container}>
                     <MoviesSlider />
-                    {/* <PopularSection title={Strings.Popular_Movies}/> */}
+                    <PopularSection title={Strings.Popular_Movies} />
                     {/* <PopularSection title={Strings.Popular_TV}/> */}
                 </ScrollView>
             ) : (
