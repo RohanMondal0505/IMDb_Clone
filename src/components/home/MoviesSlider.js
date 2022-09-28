@@ -1,4 +1,4 @@
-import {useTheme} from '@react-navigation/native';
+import { useTheme } from '@react-navigation/native';
 import React from 'react';
 import {
     Dimensions,
@@ -6,13 +6,13 @@ import {
     StyleSheet,
     Text,
     TouchableOpacity,
-    View,
+    View
 } from 'react-native';
 import Swiper from 'react-native-swiper';
-import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
-import {CustomColors} from '../../assets/values/CustomColors';
-import {CustomFonts} from '../../assets/values/CustomFonts';
-import {Strings} from '../../assets/values/Strings';
+import AntDesign from 'react-native-vector-icons/AntDesign';
+import { CustomColors } from '../../assets/values/CustomColors';
+import { CustomFonts } from '../../assets/values/CustomFonts';
+import { Strings } from '../../assets/values/Strings';
 
 const MoviesSlider = () => {
     const {colors} = useTheme();
@@ -65,8 +65,8 @@ const MoviesSlider = () => {
                             source={require('../../assets/images/IMDb_App_Icon.png')}
                             // resizeMode="contain"
                             style={styles.ImageBackgroundStyle}>
-                            <MaterialCommunityIcons
-                                name="play-circle-outline"
+                            <AntDesign
+                                name="playcircleo"
                                 size={height * 0.1}
                                 color={CustomColors.white}
                             />
