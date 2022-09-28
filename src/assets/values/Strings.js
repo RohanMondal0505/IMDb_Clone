@@ -9,4 +9,11 @@ export const Strings = {
     IMDb_Spotlight: "IMDb's Indian Spotlight: ",
     IMDb_Spotlight_Text:
         'Discover top-rated and trending movies, celebrity interviews and behind-the-scenes previews from the latest in Indian entertainment.',
+    SEE_ALL: 'SEE ALL',
+    What_to_Watch_Text: 'What to Watch',
+    What_to_Watch_Text:
+        'Showa and movies available to watch from your WatchList',
+    Top_Pics_for_you: 'Top Pics for you',
+    Top_Pics_for_you_Text: 'TV shows and movies just for you',
+    Improve_Suggestions: 'Improve Suggestions',
 };
