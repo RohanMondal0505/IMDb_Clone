@@ -29,7 +29,7 @@ const HomeScreen = ({navigation}) => {
         },
         container: {
             flex: 1,
-            paddingTop: 10,
+            paddingTop: 5,
             // borderColor: 'red',
             // borderWidth: 1,
         },
@@ -51,8 +51,8 @@ const HomeScreen = ({navigation}) => {
                         />
                     }
                     contentContainerStyle={styles.container}>
-                    <MoviesSlider />
-                    <PopularSection title={Strings.Popular_Movies} />
+                    <MoviesSlider data={''} />
+                    <PopularSection title={Strings.Popular_Movies} data={''} />
                     {/* <PopularSection title={Strings.Popular_TV}/> */}
                 </ScrollView>
             ) : (
