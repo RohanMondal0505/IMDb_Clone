@@ -9,7 +9,6 @@ import SearchScreen from '../screens/SearchScreen';
 import VideosScreen from '../screens/VideosScreen';
 
 const Tab = createBottomTabNavigator();
-// const Tab = createMaterialBottomTabNavigator();
 
 const BottomTabs = () => {
     const navigation = useNavigation();
