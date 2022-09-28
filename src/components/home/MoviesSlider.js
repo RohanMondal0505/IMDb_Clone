@@ -10,6 +10,7 @@ import {
 } from 'react-native';
 import Swiper from 'react-native-swiper';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
+import {CustomColors} from '../../assets/values/CustomColors';
 import {CustomFonts} from '../../assets/values/CustomFonts';
 import {Strings} from '../../assets/values/Strings';
 
@@ -19,7 +20,7 @@ const MoviesSlider = () => {
     const {height, width} = Dimensions.get('window');
     const styles = StyleSheet.create({
         SwiperContainer: {
-            height: height * 0.3,
+            height: height * 0.35,
             width: width,
         },
         TouchableContainer: {
@@ -66,7 +67,8 @@ const MoviesSlider = () => {
                             style={styles.ImageBackgroundStyle}>
                             <MaterialCommunityIcons
                                 name="play-circle-outline"
-                                size={height * 0.07}
+                                size={height * 0.1}
+                                color={CustomColors.white}
                             />
                         </ImageBackground>
                     </TouchableOpacity>
