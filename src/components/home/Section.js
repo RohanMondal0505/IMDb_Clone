@@ -37,7 +37,7 @@ const Section = props => {
                 />
             ) : null}
             <TypeContainer colors={colors} TypeData={props.TypeData} />
-            <ListItems colors={colors} data={props.data} />
+            <ListItems title={props.title} colors={colors} data={props.data} />
         </View>
     );
 };
@@ -125,7 +125,7 @@ const TypeContainer = props => {
         ViewStyle: {
             flexDirection: 'row',
             borderRadius: 20,
-            borderWidth: 1,
+            borderWidth: 0.5,
             borderColor: props.colors.inActiveIconColor,
             overflow: 'hidden',
             marginRight: 10,
@@ -133,15 +133,17 @@ const TypeContainer = props => {
         TextStyle: {
             padding: 8,
             color: props.colors.textColor,
-            borderRightWidth: 1,
+            borderRightWidth: 0.5,
             borderColor: props.colors.inActiveIconColor,
         },
     });
+    
     return (
         <ScrollView
             horizontal
             showsHorizontalScrollIndicator={false}
             contentContainerStyle={{marginVertical: 10, marginTop: 25}}>
+            
             <View style={styles.ViewStyle}>
                 <Pressable
                     style={({pressed}) => [
@@ -150,7 +152,6 @@ const TypeContainer = props => {
                                 ? 'rgba(210, 230, 255,.3)'
                                 : 'transparent',
                         },
-                        styles.PressableStyle,
                     ]}>
                     <Text style={styles.TextStyle}>Other Provider</Text>
                 </Pressable>
@@ -163,7 +164,6 @@ const TypeContainer = props => {
                                 : 'transparent',
                             borderRadius: 20,
                         },
-                        styles.PressableStyle,
                     ]}>
                     <Text style={styles.TextStyle}>Prime Videos</Text>
                 </Pressable>
@@ -177,7 +177,6 @@ const TypeContainer = props => {
                                 ? 'rgba(210, 230, 255,.3)'
                                 : 'transparent',
                         },
-                        styles.PressableStyle,
                     ]}>
                     <Text style={styles.TextStyle}>Other Provider</Text>
                 </Pressable>
@@ -189,7 +188,6 @@ const TypeContainer = props => {
                                 : 'transparent',
                             borderRadius: 20,
                         },
-                        styles.PressableStyle,
                     ]}>
                     <Text style={styles.TextStyle}>Prime Videos</Text>
                 </Pressable>
@@ -204,12 +202,17 @@ const ListItems = props => (
         showsHorizontalScrollIndicator={false}
         contentContainerStyle={{paddingVertical: 20}}>
         {props.data.map((item, index) => (
-            <ListItem key={index} colors={props.colors} data={item} />
+            <ListItem
+                key={index}
+                colors={props.colors}
+                data={item}
+                title={props.title}
+            />
         ))}
     </ScrollView>
 );
 
-const ListItem = ({colors, data}) => {
+const ListItem = ({colors, data,title}) => {
     let time = data.time;
     let h = Math.floor(time / 60);
     let m = time % 60;
@@ -270,6 +273,7 @@ const ListItem = ({colors, data}) => {
                     />
                     <Text>{data.rating}</Text>
                 </View>
+
                 <Text
                     style={{
                         color: colors.textColor,
@@ -292,15 +296,27 @@ const ListItem = ({colors, data}) => {
                         }}>
                         {data.year}{' '}
                     </Text>
-                    <Text
-                        style={{
-                            color: colors.plusIconBackgroundColor,
-                            fontSize: 12,
-                        }}>
-                        {' '}
-                        {h}h {m}m
-                    </Text>
+                    {title === Strings.Popular_TV ? (
+                        <Text
+                            style={{
+                                color: colors.plusIconBackgroundColor,
+                                fontSize: 12,
+                            }}>
+                            {' '}
+                            {data.eps}eps
+                        </Text>
+                    ) : (
+                        <Text
+                            style={{
+                                color: colors.plusIconBackgroundColor,
+                                fontSize: 12,
+                            }}>
+                            {' '}
+                            {h}h {m}m
+                        </Text>
+                    )}
                 </View>
+
                 <Pressable
                     onPress={() => {}}
                     style={{
