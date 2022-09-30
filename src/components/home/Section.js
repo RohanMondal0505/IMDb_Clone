@@ -137,13 +137,12 @@ const TypeContainer = props => {
             borderColor: props.colors.inActiveIconColor,
         },
     });
-    
+
     return (
         <ScrollView
             horizontal
             showsHorizontalScrollIndicator={false}
             contentContainerStyle={{marginVertical: 10, marginTop: 25}}>
-            
             <View style={styles.ViewStyle}>
                 <Pressable
                     style={({pressed}) => [
@@ -212,7 +211,7 @@ const ListItems = props => (
     </ScrollView>
 );
 
-const ListItem = ({colors, data,title}) => {
+const ListItem = ({colors, data, title}) => {
     let time = data.time;
     let h = Math.floor(time / 60);
     let m = time % 60;
