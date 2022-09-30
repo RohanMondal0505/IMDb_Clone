@@ -1,4 +1,4 @@
-import { useTheme } from '@react-navigation/native';
+import {useTheme} from '@react-navigation/native';
 import React from 'react';
 import {
     Dimensions,
@@ -6,15 +6,15 @@ import {
     StyleSheet,
     Text,
     TouchableOpacity,
-    View
+    View,
 } from 'react-native';
 import Swiper from 'react-native-swiper';
 import AntDesign from 'react-native-vector-icons/AntDesign';
-import { CustomColors } from '../../assets/values/CustomColors';
-import { CustomFonts } from '../../assets/values/CustomFonts';
-import { Strings } from '../../assets/values/Strings';
+import {CustomColors} from '../../assets/values/CustomColors';
+import {CustomFonts} from '../../assets/values/CustomFonts';
+import {Strings} from '../../assets/values/Strings';
 
-const MoviesSlider = () => {
+const MoviesSlider = props => {
     const {colors} = useTheme();
 
     const {height, width} = Dimensions.get('window');
@@ -38,6 +38,7 @@ const MoviesSlider = () => {
         TextContainer: {
             padding: 20,
             backgroundColor: colors.componentsBackgroundColor,
+            elevation: 3,
         },
         TextStyle: {
             fontSize: 14,
@@ -51,19 +52,18 @@ const MoviesSlider = () => {
             color: colors.headingTextColor,
         },
     });
-    let data = ['A', 'B', 'C'];
+
     return (
         <View style={styles.SwiperContainer}>
             <Swiper autoplay={true} showsPagination={false} autoplayTimeout={5}>
-                {data.map((item, index) => (
+                {props.data.map((item, index) => (
                     <TouchableOpacity
                         key={index}
                         activeOpacity={0.5}
                         style={styles.TouchableContainer}
                         onPress={() => console.log(`Clicked ${index} `)}>
                         <ImageBackground
-                            source={require('../../assets/images/IMDb_App_Icon.png')}
-                            // resizeMode="contain"
+                            source={{uri: item}}
                             style={styles.ImageBackgroundStyle}>
                             <AntDesign
                                 name="playcircleo"
