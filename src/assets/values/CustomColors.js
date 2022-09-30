@@ -10,7 +10,7 @@ export const CustomDarkColors = {
     headingTextColor: '#18A4E4', //127BAB
     statusbarColor: '#1d1d1d',
     plusIconBackgroundColor: '#686868',
-
+    
     //Change Colors
     mainBackgroundColor: '#191919',
     componentsBackgroundColor: '#212121',
@@ -19,6 +19,7 @@ export const CustomDarkColors = {
     activeIconColor: '#F5C518',
     bottomBarColor: '#1D1D1D',
     bottomBarOverlay: 'rgba(245, 197, 24,.3)',
+    SocialButtonColor:'#BCBCBC',
 };
 
 export const CustomLightColors = {
@@ -27,7 +28,7 @@ export const CustomLightColors = {
     headingTextColor: '#18A4E4',
     statusbarColor: '#1d1d1d',
     plusIconBackgroundColor: '#686868',
-
+    
     //Change Colors
     mainBackgroundColor: '#EEEEEE',
     componentsBackgroundColor: '#FAFAFA',
@@ -36,4 +37,5 @@ export const CustomLightColors = {
     activeIconColor: '#000000',
     bottomBarColor: '#FFFFFF',
     bottomBarOverlay: '#D3D3D3',
+    SocialButtonColor:'#4B4B4B',
 };
