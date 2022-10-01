@@ -1,8 +1,9 @@
 import {useTheme} from '@react-navigation/native';
 import React from 'react';
-import {Linking, Pressable, StyleSheet, Text, View} from 'react-native';
+import {Linking, Pressable, StyleSheet, View} from 'react-native';
 import Icon from 'react-native-vector-icons/Ionicons';
-import {CustomFonts} from '../../assets/values/CustomFonts';
+import {Strings} from '../../assets/values/Strings';
+import TitleContainer from '../Custom/TitleContainer';
 
 const Social = () => {
     const {colors} = useTheme();
@@ -18,13 +19,33 @@ const Social = () => {
 
     return (
         <View style={styles.Container}>
-            <TitleContainer title="Follow IMDb" colors={colors} />
+            <TitleContainer title={Strings.Follow_IMDb} />
             <View style={{marginVertical: 0, flexDirection: 'row'}}>
-                <SocialButton name="ios-logo-facebook" colors={colors} link='facebook' />
-                <SocialButton name="ios-logo-instagram" colors={colors} link='instagram' />
-                <SocialButton name="ios-logo-twitch" colors={colors} link='twitch' />
-                <SocialButton name="ios-logo-twitter" colors={colors} link='twitter' />
-                <SocialButton name="ios-logo-youtube" colors={colors} link='youtube' />
+                <SocialButton
+                    name="ios-logo-facebook"
+                    colors={colors}
+                    link="facebook"
+                />
+                <SocialButton
+                    name="ios-logo-instagram"
+                    colors={colors}
+                    link="instagram"
+                />
+                <SocialButton
+                    name="ios-logo-twitch"
+                    colors={colors}
+                    link="twitch"
+                />
+                <SocialButton
+                    name="ios-logo-twitter"
+                    colors={colors}
+                    link="twitter"
+                />
+                <SocialButton
+                    name="ios-logo-youtube"
+                    colors={colors}
+                    link="youtube"
+                />
             </View>
         </View>
     );
@@ -32,46 +53,12 @@ const Social = () => {
 
 export default Social;
 
-const TitleContainer = ({title, colors}) => (
-    <View
-        style={{
-            flexDirection: 'row',
-            alignItems: 'center',
-        }}>
-        <View
-            style={{
-                width: 4,
-                height: 24,
-                backgroundColor: colors.primaryColor,
-                borderRadius: 5,
-                marginRight: 5,
-            }}
-        />
-        <View
-            style={{
-                flex: 1,
-                flexDirection: 'row',
-                justifyContent: 'space-between',
-                paddingHorizontal: 0,
-            }}>
-            <Text
-                style={{
-                    color: colors.textColor,
-                    fontSize: 22,
-                    fontFamily: CustomFonts.Bold,
-                }}>
-                {title}
-            </Text>
-        </View>
-    </View>
-);
-
 const SocialButton = props => (
     <Pressable
         onPress={() => {
-            console.log(props.link)
+            console.log(props.link);
             Linking.canOpenURL('https://www.facebook.com/');
-         }}
+        }}
         style={({pressed}) => [
             {
                 backgroundColor: pressed
