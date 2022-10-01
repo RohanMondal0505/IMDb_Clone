@@ -9,7 +9,7 @@ const Social = () => {
 
     const styles = StyleSheet.create({
         Container: {
-            marginTop: 20,
+            marginTop: 15,
             backgroundColor: colors.componentsBackgroundColor,
             padding: 10,
             elevation: 5,
