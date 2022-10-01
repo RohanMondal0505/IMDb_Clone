@@ -52,7 +52,7 @@ const TitleContainer = ({title, colors}) => (
         }}>
         <View
             style={{
-                width: 5,
+                width: 4,
                 height: 24,
                 backgroundColor: colors.primaryColor,
                 borderRadius: 5,
