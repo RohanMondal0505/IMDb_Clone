@@ -13,6 +13,7 @@ import {
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 import {CustomFonts} from '../../assets/values/CustomFonts';
 import {Strings} from '../../assets/values/Strings';
+import PlusButton from '../Custom/PlusButton';
 
 const Section = props => {
     const {colors} = useTheme();
@@ -20,7 +21,7 @@ const Section = props => {
     const {height, width} = Dimensions.get('window');
     const styles = StyleSheet.create({
         SectionContainer: {
-            marginTop: 20,
+            marginTop: 15,
             backgroundColor: colors.componentsBackgroundColor,
             padding: 10,
             elevation: 5,
@@ -332,6 +333,8 @@ const ListItem = ({colors, data, title}) => {
                     </Text>
                 </Pressable>
             </View>
+
+            <PlusButton />
         </Pressable>
     );
 };
