@@ -1,6 +1,6 @@
 import {useTheme} from '@react-navigation/native';
 import React from 'react';
-import {StyleSheet, Text, View} from 'react-native';
+import {Linking, Pressable, StyleSheet, Text, View} from 'react-native';
 import Icon from 'react-native-vector-icons/Ionicons';
 import {CustomFonts} from '../../assets/values/CustomFonts';
 
@@ -19,12 +19,12 @@ const Social = () => {
     return (
         <View style={styles.Container}>
             <TitleContainer title="Follow IMDb" colors={colors} />
-            <View style={{marginVertical: 10, flexDirection: 'row'}}>
-                <SocialButton name="ios-logo-facebook" colors={colors}/>
-                <SocialButton name="ios-logo-instagram" colors={colors}/>
-                <SocialButton name="ios-logo-twitch" colors={colors}/>
-                <SocialButton name="ios-logo-twitter" colors={colors}/>
-                <SocialButton name="ios-logo-youtube" colors={colors}/>
+            <View style={{marginVertical: 0, flexDirection: 'row'}}>
+                <SocialButton name="ios-logo-facebook" colors={colors} link='facebook' />
+                <SocialButton name="ios-logo-instagram" colors={colors} link='instagram' />
+                <SocialButton name="ios-logo-twitch" colors={colors} link='twitch' />
+                <SocialButton name="ios-logo-twitter" colors={colors} link='twitter' />
+                <SocialButton name="ios-logo-youtube" colors={colors} link='youtube' />
             </View>
         </View>
     );
@@ -67,10 +67,24 @@ const TitleContainer = ({title, colors}) => (
 );
 
 const SocialButton = props => (
-    <Icon
-        name={props.name}
-        size={32}
-        color={props.colors.SocialButtonColor}
-        style={{marginHorizontal: 12}}
-    />
+    <Pressable
+        onPress={() => {
+            console.log(props.link)
+            Linking.canOpenURL('https://www.facebook.com/');
+         }}
+        style={({pressed}) => [
+            {
+                backgroundColor: pressed
+                    ? props.colors.bottomBarOverlay
+                    : 'transparent',
+                padding: 10,
+            },
+        ]}>
+        <Icon
+            name={props.name}
+            size={32}
+            color={props.colors.SocialButtonColor}
+            style={{marginHorizontal: 5}}
+        />
+    </Pressable>
 );
