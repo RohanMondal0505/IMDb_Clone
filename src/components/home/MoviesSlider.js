@@ -20,7 +20,7 @@ const MoviesSlider = props => {
     const {height, width} = Dimensions.get('window');
     const styles = StyleSheet.create({
         SwiperContainer: {
-            height: height * 0.35,
+            height: height * 0.366,
             width: width,
         },
         TouchableContainer: {
