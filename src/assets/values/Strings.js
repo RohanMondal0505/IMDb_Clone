@@ -18,5 +18,8 @@ export const Strings = {
     Improve_Suggestions: 'Improve Suggestions',
     Watch_option: 'Watch option',
     Follow_IMDb: 'Follow IMDb',
-    
+    Popular_Indian_Comedy_Picks: 'Popular Indian Comedy Picks',
+    Fan_Favorites: 'Fan Favorites',
+    Fan_Favorites_Text: "This week's top TV and Movies",
+    Top_News:'Top News'
 };
