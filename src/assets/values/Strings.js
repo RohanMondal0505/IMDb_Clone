@@ -16,4 +16,7 @@ export const Strings = {
     Top_Pics_for_you: 'Top Pics for you',
     Top_Pics_for_you_Text: 'TV shows and movies just for you',
     Improve_Suggestions: 'Improve Suggestions',
+    Watch_option: 'Watch option',
+    Follow_IMDb: 'Follow IMDb',
+    
 };
