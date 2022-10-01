@@ -1,65 +1,64 @@
 import {useTheme} from '@react-navigation/native';
-import React, { useState } from 'react';
-import {Pressable, View} from 'react-native';
+import React, {useState} from 'react';
+import {Pressable, StyleSheet, View} from 'react-native';
 import Icon from 'react-native-vector-icons/Octicons';
 
 const PlusButton = () => {
     const {colors} = useTheme();
     const [icon, setIcon] = useState(false);
 
+    const styles = StyleSheet.create({
+        container: {
+            height: 45,
+            width: 40,
+            backgroundColor: icon
+                ? colors.primaryColor
+                : colors.plusIconBackgroundColor,
+            position: 'absolute',
+            top: 0,
+            left: 0,
+            justifyContent: 'center',
+            alignItems: 'center',
+            zIndex: 10,
+        },
+        triangleStyle: {
+            position: 'absolute',
+            bottom: -10,
+            transform: [{rotate: '180deg'}],
+            borderStyle: 'solid',
+            borderTopWidth: 0,
+            borderRightWidth: 0,
+            borderLeftWidth: 0,
+            borderBottomWidth: 10,
+            borderTopColor: 'transparent',
+            borderRightColor: 'transparent',
+            borderLeftColor: 'transparent',
+            borderBottomColor: icon
+                ? colors.primaryColor
+                : colors.plusIconBackgroundColor,
+        },
+        rightStyle: {},
+    });
+
     return (
-        <Pressable
-            onPress={() => setIcon(!icon)}
-            style={{
-                height: 45,
-                width: 40,
-                backgroundColor: icon
-                    ? colors.primaryColor
-                    : colors.plusIconBackgroundColor,
-                position: 'absolute',
-                top: 0,
-                left: 0,
-                justifyContent: 'center',
-                alignItems: 'center',
-                zIndex: 10,
-            }}>
+        <Pressable onPress={() => setIcon(!icon)} style={styles.container}>
             <View
-                style={{
-                    position: 'absolute',
-                    bottom: -10,
-                    left: 0,
-                    transform: [{rotate: '180deg'}],
-                    borderStyle: 'solid',
-                    borderTopWidth: 0,
-                    borderRightWidth: 0,
-                    borderBottomWidth: 10,
-                    borderLeftWidth: 20,
-                    borderTopColor: 'transparent',
-                    borderRightColor: 'transparent',
-                    borderLeftColor: 'transparent',
-                    borderBottomColor: icon
-                        ? colors.primaryColor
-                        : colors.plusIconBackgroundColor,
-                }}
+                style={[
+                    styles.triangleStyle,
+                    {
+                        left: 0,
+                        borderLeftWidth: 20,
+                    },
+                ]}
             />
             <View
-                style={{
-                    position: 'absolute',
-                    bottom: -10,
-                    right: 0,
-                    transform: [{rotate: '180deg'}],
-                    borderStyle: 'solid',
-                    borderTopWidth: 0,
-                    borderRightWidth: 20,
-                    borderBottomWidth: 10,
-                    borderLeftWidth: 0,
-                    borderTopColor: 'transparent',
-                    borderRightColor: 'transparent',
-                    borderLeftColor: 'transparent',
-                    borderBottomColor: icon
-                        ? colors.primaryColor
-                        : colors.plusIconBackgroundColor,
-                }}
+                style={[
+                    styles.triangleStyle,
+                    {
+                        right: 0,
+                        borderRightWidth: 20,
+                    },
+                ]}
             />
             {icon ? (
                 <Icon name="check" size={25} color={colors.black} />
