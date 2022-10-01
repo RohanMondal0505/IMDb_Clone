@@ -37,16 +37,19 @@ const TitleContainer = props => {
                     }}>
                     {props.title}
                 </Text>
-                <Text
-                    onPress={() => console.log(title)}
-                    style={{
-                        color: colors.headingTextColor,
-                        fontSize: 14,
-                        fontFamily: CustomFonts.Regular,
-                        paddingRight: 10,
-                    }}>
-                    {Strings.SEE_ALL}
-                </Text>
+                {props.title !== Strings.Follow_IMDb ? (
+                    <Text
+                        onPress={() => console.log(props.title)}
+                        style={{
+                            color: colors.headingTextColor,
+                            fontSize: 14,
+                            fontFamily: CustomFonts.Regular,
+                            paddingHorizontal: 10,
+                            paddingVertical: 5,
+                        }}>
+                        {Strings.SEE_ALL}
+                    </Text>
+                ) : null}
             </View>
         </View>
     );
