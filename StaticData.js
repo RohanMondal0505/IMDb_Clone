@@ -283,3 +283,22 @@ export const fanFavorites = [
         type: 'PG - 13',
     },
 ];
+
+export const topNews = [
+    {
+        image: 'https://m.media-amazon.com/images/M/MV5BODJkNDY0MDgtYzFmYy00YzMyLThiNGUtOGI3ZjcyNjk0MWFiXkEyXkFqcGdeQXVyODc0OTEyNDU@._V1_.jpg',
+        title: '‘Smile’ Scores 19 Million at Box Office While ‘Bros’ Is a Bust With 4.7 Million',
+        description:
+            'The box office’s two newest entrants are having very different results, as Paramount’s “Smile” is having a good start in the No. 1 spot while Universal’s “Bros” is looking like the latest theatrical flop.',
+        time: '01 October 2022',
+        by: 'The Wrap',
+    },
+    {
+        image: 'https://m.media-amazon.com/images/M/MV5BZWYzOGEwNTgtNWU3NS00ZTQ0LWJkODUtMmVhMjIwMjA1ZmQwXkEyXkFqcGdeQXVyMjkwOTAyMDU@._V1_.jpg',
+        title: 'Box Office: ‘Top Gun: Maverick’ Passes ‘Frozen II’ As ‘Minions 2’ Tops $900 Million',
+        description:
+            'In holdover box office news for the weekend, Sony’s Bullet Train earned $3.25 million (-44%) for a new $92.55 million 38-day domestic total. That’s not bad for David Leitch’s $90 million, R-rated, Brad Pitt-and-friends action comedy that is a ‘new to you’ adaptation for most moviegoers. It should still crawl to $100 million domestic and has already passed $200 million worldwide. It may top out at 2.5x the budget globally, but I expect healthy post-theatrical business and a lot of folks discovering it in seven months on Netflix. It’s not a barn-burner, but A) not every big movie needs to spawn a franchise and B) it’s still a strong enough performance, like Sandra Bullock and Channing Tatum’s The Lost City, to convince Hollywood to still make old-school movies amid the franchise plays.',
+        time: 'Sep 11, 2022',
+        by: 'HOLLYWOOD & ENTERTAINMENT',
+    },
+];
