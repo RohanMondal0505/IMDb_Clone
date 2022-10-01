@@ -2,6 +2,7 @@ import {useTheme} from '@react-navigation/native';
 import React, {useState} from 'react';
 import {
     Dimensions,
+    FlatList,
     Image,
     Pressable,
     ScrollView,
@@ -19,6 +20,7 @@ const Section = props => {
     const {colors} = useTheme();
 
     const {height, width} = Dimensions.get('window');
+
     const styles = StyleSheet.create({
         SectionContainer: {
             marginTop: 15,
@@ -37,8 +39,15 @@ const Section = props => {
                     colors={colors}
                 />
             ) : null}
+            {props.title === Strings.Fan_Favorites ? (
+                <SubTitleContainer
+                    title={Strings.Fan_Favorites}
+                    text={Strings.Fan_Favorites_Text}
+                    colors={colors}
+                />
+            ) : null}
             <TypeContainer colors={colors} TypeData={props.TypeData} />
-            <ListItems title={props.title} colors={colors} data={props.data} />
+            <ListItems colors={colors} data={props.data} />
         </View>
     );
 };
@@ -65,6 +74,7 @@ const TitleContainer = ({title, colors}) => (
                 flex: 1,
                 flexDirection: 'row',
                 justifyContent: 'space-between',
+                alignItems: 'center',
                 paddingHorizontal: 0,
             }}>
             <Text
@@ -79,8 +89,9 @@ const TitleContainer = ({title, colors}) => (
                 onPress={() => console.log('See all clicked')}
                 style={{
                     color: colors.headingTextColor,
-                    fontSize: 18,
+                    fontSize: 14,
                     fontFamily: CustomFonts.Regular,
+                    paddingRight: 10,
                 }}>
                 {Strings.SEE_ALL}
             </Text>
@@ -99,25 +110,28 @@ const SubTitleContainer = props => (
                 color: props.colors.inActiveIconColor,
                 fontSize: 15,
                 paddingHorizontal: 10,
-                fontFamily: CustomFonts.Light,
+                fontFamily: CustomFonts.Regular,
                 marginVertical: 10,
             }}>
             {props.text}
         </Text>
-        <TouchableOpacity
-            style={{
-                marginVertical: 10,
-                paddingVertical: 0,
-            }}>
-            <Text
+
+        {props.title === Strings.Top_Pics_for_you_Text ? (
+            <TouchableOpacity
                 style={{
-                    color: props.colors.headingTextColor,
-                    fontSize: 18,
-                    fontFamily: CustomFonts.Regular,
+                    marginVertical: 10,
+                    paddingVertical: 0,
                 }}>
-                {Strings.Improve_Suggestions}
-            </Text>
-        </TouchableOpacity>
+                <Text
+                    style={{
+                        color: props.colors.headingTextColor,
+                        fontSize: 18,
+                        fontFamily: CustomFonts.Regular,
+                    }}>
+                    {Strings.Improve_Suggestions}
+                </Text>
+            </TouchableOpacity>
+        ) : null}
     </View>
 );
 
@@ -196,30 +210,37 @@ const TypeContainer = props => {
     );
 };
 
+// const ListItems = props => (
+//     <ScrollView
+//         horizontal
+//         showsHorizontalScrollIndicator={false}>
+//         {props.data.map((item, index) => (
+//             <ListItem key={index} colors={props.colors} data={item} />
+//         ))}
+//     </ScrollView>
+// );
+
 const ListItems = props => (
-    <ScrollView
-        horizontal
-        showsHorizontalScrollIndicator={false}
-        contentContainerStyle={{paddingVertical: 20}}>
-        {props.data.map((item, index) => (
-            <ListItem
-                key={index}
-                colors={props.colors}
-                data={item}
-                title={props.title}
-            />
-        ))}
-    </ScrollView>
+    <View>
+        <FlatList
+            horizontal
+            showsHorizontalScrollIndicator={false}
+            data={props.data}
+            renderItem={({item, index}) => (
+                <ListItem key={index} colors={props.colors} data={item} />
+            )}
+        />
+    </View>
 );
 
-const ListItem = ({colors, data, title}) => {
+const ListItem = ({colors, data}) => {
     let time = data.time;
     let h = Math.floor(time / 60);
     let m = time % 60;
     const [overlay, setOverlay] = useState(false);
     return (
         <Pressable
-            onPress={() => {}}
+            onPress={() => {console.log(data.title)}}
             onPressIn={() => setOverlay(true)}
             onPressOut={() => setOverlay(false)}
             style={{
@@ -227,6 +248,7 @@ const ListItem = ({colors, data, title}) => {
                 height: 330,
                 overflow: 'hidden',
                 marginHorizontal: 5,
+                marginVertical:15,
                 backgroundColor: colors.componentsBackgroundColor,
                 borderRadius: 15,
                 elevation: 4,
@@ -296,7 +318,17 @@ const ListItem = ({colors, data, title}) => {
                         }}>
                         {data.year}{' '}
                     </Text>
-                    {title === Strings.Popular_TV ? (
+                    {data.type ? (
+                        <Text
+                            style={{
+                                color: colors.plusIconBackgroundColor,
+                                fontSize: 12,
+                            }}>
+                            {' '}
+                            {data.type}
+                        </Text>
+                    ) : null}
+                    {data.eps ? (
                         <Text
                             style={{
                                 color: colors.plusIconBackgroundColor,
@@ -318,7 +350,7 @@ const ListItem = ({colors, data, title}) => {
                 </View>
 
                 <Pressable
-                    onPress={() => {}}
+                    onPress={() => {console.log('Watch Option => ',data.title)}}
                     style={{
                         borderWidth: 1,
                         borderColor: colors.plusIconBackgroundColor,
