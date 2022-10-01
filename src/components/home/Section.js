@@ -15,6 +15,7 @@ import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 import {CustomFonts} from '../../assets/values/CustomFonts';
 import {Strings} from '../../assets/values/Strings';
 import PlusButton from '../Custom/PlusButton';
+import TitleContainer from '../Custom/TitleContainer';
 
 const Section = props => {
     const {colors} = useTheme();
@@ -32,7 +33,8 @@ const Section = props => {
 
     return (
         <View style={styles.SectionContainer}>
-            <TitleContainer title={props.title} colors={colors} />
+            <TitleContainer title={props.title}/>
+
             {props.title === Strings.Top_Pics_for_you_Text ? (
                 <SubTitleContainer
                     text={Strings.Top_Pics_for_you_Text}
@@ -46,6 +48,7 @@ const Section = props => {
                     colors={colors}
                 />
             ) : null}
+
             <TypeContainer colors={colors} TypeData={props.TypeData} />
             <ListItems colors={colors} data={props.data} />
         </View>
@@ -53,51 +56,6 @@ const Section = props => {
 };
 
 export default Section;
-
-const TitleContainer = ({title, colors}) => (
-    <View
-        style={{
-            flexDirection: 'row',
-            alignItems: 'center',
-        }}>
-        <View
-            style={{
-                width: 4,
-                height: 24,
-                backgroundColor: colors.primaryColor,
-                borderRadius: 5,
-                marginRight: 5,
-            }}
-        />
-        <View
-            style={{
-                flex: 1,
-                flexDirection: 'row',
-                justifyContent: 'space-between',
-                alignItems: 'center',
-                paddingHorizontal: 0,
-            }}>
-            <Text
-                style={{
-                    color: colors.textColor,
-                    fontSize: 22,
-                    fontFamily: CustomFonts.Bold,
-                }}>
-                {title}
-            </Text>
-            <Text
-                onPress={() => console.log('See all clicked')}
-                style={{
-                    color: colors.headingTextColor,
-                    fontSize: 14,
-                    fontFamily: CustomFonts.Regular,
-                    paddingRight: 10,
-                }}>
-                {Strings.SEE_ALL}
-            </Text>
-        </View>
-    </View>
-);
 
 const SubTitleContainer = props => (
     <View
@@ -240,7 +198,9 @@ const ListItem = ({colors, data}) => {
     const [overlay, setOverlay] = useState(false);
     return (
         <Pressable
-            onPress={() => {console.log(data.title)}}
+            onPress={() => {
+                console.log(data.title);
+            }}
             onPressIn={() => setOverlay(true)}
             onPressOut={() => setOverlay(false)}
             style={{
@@ -248,7 +208,7 @@ const ListItem = ({colors, data}) => {
                 height: 330,
                 overflow: 'hidden',
                 marginHorizontal: 5,
-                marginVertical:15,
+                marginVertical: 15,
                 backgroundColor: colors.componentsBackgroundColor,
                 borderRadius: 15,
                 elevation: 4,
@@ -350,7 +310,9 @@ const ListItem = ({colors, data}) => {
                 </View>
 
                 <Pressable
-                    onPress={() => {console.log('Watch Option => ',data.title)}}
+                    onPress={() => {
+                        console.log('Watch Option => ', data.title);
+                    }}
                     style={{
                         borderWidth: 1,
                         borderColor: colors.plusIconBackgroundColor,
