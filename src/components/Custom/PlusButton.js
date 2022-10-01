@@ -41,7 +41,13 @@ const PlusButton = () => {
     });
 
     return (
-        <Pressable onPress={() => setIcon(!icon)} style={styles.container}>
+        <Pressable
+            onPress={() => {
+                let i = !icon;
+                setIcon(i);
+                console.log(i ? 'Checked' : 'Unchecked');
+            }}
+            style={styles.container}>
             <View
                 style={[
                     styles.triangleStyle,
