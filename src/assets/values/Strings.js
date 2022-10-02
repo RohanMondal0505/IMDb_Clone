@@ -21,5 +21,6 @@ export const Strings = {
     Popular_Indian_Comedy_Picks: 'Popular Indian Comedy Picks',
     Fan_Favorites: 'Fan Favorites',
     Fan_Favorites_Text: "This week's top TV and Movies",
-    Top_News:'Top News'
+    Top_News: 'Top News',
+    Born_Today: 'Born Today',
 };
