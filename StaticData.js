@@ -302,3 +302,36 @@ export const topNews = [
         by: 'HOLLYWOOD & ENTERTAINMENT',
     },
 ];
+
+export const bornToDay = [
+    {
+        image: 'https://m.media-amazon.com/images/M/MV5BMzU0NTc3OTExOF5BMl5BanBnXkFtZTcwMjM0MjcxNQ@@._V1_.jpg',
+        name: 'Lorraine Bracco',
+        age: '2 October 1954',
+    },
+    {
+        image: 'https://m.media-amazon.com/images/M/MV5BMjA1NTUxMTk3N15BMl5BanBnXkFtZTcwNjg3MDM3Nw@@._V1_.jpg',
+        name: 'Camilla Belle',
+        age: '2 October 1987',
+    },
+    {
+        image: 'https://m.media-amazon.com/images/M/MV5BZTY3NTE5N2QtNWVmYy00ZWFjLTgzZTMtOTY2ZjM4MGY2OTRmXkEyXkFqcGdeQXVyNTI5Mjg0Mg@@._V1_.jpg',
+        name: 'Brianna Brown',
+        age: '2 October 1979',
+    },
+    {
+        image: 'https://hips.hearstapps.com/hmg-prod/images/joseph-baena-is-seen-on-july-04-2019-in-los-angeles-news-photo-1570553570.jpg',
+        name: 'Joseph Baena',
+        age: '2 October 1997',
+    },
+    {
+        image: 'https://m.media-amazon.com/images/M/MV5BODgzMzM2NTE0Ml5BMl5BanBnXkFtZTcwMTcyMTkyOQ@@._V1_UY1200_CR76,0,630,1200_AL_.jpg',
+        name: 'Kate Winslet',
+        age: '5 October 1975',
+    },
+    {
+        image: 'https://i.guim.co.uk/img/media/d0d983846ba253cc749ecf17ac23b302790d4149/14_88_2442_1465/master/2442.jpg?width=1200&height=1200&quality=85&auto=format&fit=crop&s=9536a5786b0e0cabc18b8690e6703ab4',
+        name: 'Emilia Clarke',
+        age: '23 October 1986',
+    },
+];
