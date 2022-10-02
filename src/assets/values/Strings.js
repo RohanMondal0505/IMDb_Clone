@@ -23,9 +23,11 @@ export const Strings = {
     Fan_Favorites_Text: "This week's top TV and Movies",
     Top_News: 'Top News',
     Born_Today: 'Born Today',
-    From_your_Watchlist:'From your Watchlist',
+    From_your_Watchlist: 'From your Watchlist',
     Your_Watchlist_Empty: 'Your Watchlist is Empty',
-    Your_Watchlist_Empty_Text: 'save shows and movies to keep track of what you want to watch.',
-    Browse_popular_movies:'Browse popular movies'
-
+    Your_Watchlist_Empty_Text:
+        'save shows and movies to keep track of what you want to watch.',
+    Browse_popular_movies: 'Browse popular movies',
+    Top_Box_Office: 'Top Box Office',
+    Weekend: 'Weekend of 23 - 25 September',
 };
