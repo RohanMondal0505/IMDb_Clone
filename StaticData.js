@@ -335,3 +335,30 @@ export const bornToDay = [
         age: '23 October 1986',
     },
 ];
+
+export const TopBox = [
+    {
+        title: "Don't Worry Darling",
+        price:'19.3M'
+    },
+    {
+        title: "The Women King",
+        price:'11M'
+    },
+    {
+        title: "Avatar",
+        price:'10.5M'
+    },
+    {
+        title: "Barbarian",
+        price:'4.8M'
+    },
+    {
+        title: "See How They Run",
+        price:'1.9M'
+    },
+    {
+        title: "Pearl",
+        price:'1.8M'
+    },
+]
