@@ -8,17 +8,13 @@ import TitleContainer from '../Custom/TitleContainer';
 const Social = () => {
     const {colors} = useTheme();
 
-    const styles = StyleSheet.create({
-        Container: {
+    return (
+        <View style={{
             marginTop: 15,
             backgroundColor: colors.componentsBackgroundColor,
             padding: 10,
             elevation: 5,
-        },
-    });
-
-    return (
-        <View style={styles.Container}>
+        }}>
             <TitleContainer title={Strings.Follow_IMDb} />
             <View style={{marginVertical: 0, flexDirection: 'row'}}>
                 <SocialButton
