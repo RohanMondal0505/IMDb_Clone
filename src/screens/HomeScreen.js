@@ -7,20 +7,36 @@ import {
     ScrollView,
     StyleSheet,
 } from 'react-native';
+import {
+    bornToDay,
+    comedyData,
+    fanFavorites,
+    movieData,
+    slideData,
+    TopBox,
+    topNews,
+    TVData,
+    TypeData,
+} from '../../StaticData';
 import {Strings} from '../assets/values/Strings';
+import BornToday from '../components/home/BornToday';
 import ConnectionLostView from '../components/home/ConnectionLostView';
 import MoviesSlider from '../components/home/MoviesSlider';
-import PopularSection from '../components/home/PopularSection';
+import Section from '../components/home/Section';
+import Social from '../components/home/Social';
+import TopBoxOffice from '../components/home/TopBoxOffice';
+import TopNewsSection from '../components/home/TopNewsSection';
+import WhatToWatch from '../components/home/WhatToWatch';
 
 const HomeScreen = ({navigation}) => {
     const {colors} = useTheme();
     const netInfo = useNetInfo();
     const [refreshing, setRefreshing] = useState(false);
 
-    const onRefresh = React.useCallback(() => {
+    const onRefresh = () => {
         setRefreshing(true);
         setTimeout(() => setRefreshing(false), 3000);
-    }, []);
+    };
 
     const styles = StyleSheet.create({
         MainContainer: {
@@ -28,10 +44,9 @@ const HomeScreen = ({navigation}) => {
             backgroundColor: colors.mainBackgroundColor,
         },
         container: {
-            flex: 1,
-            paddingTop: 5,
-            // borderColor: 'red',
-            // borderWidth: 1,
+            width: '100%',
+            paddingTop: 8,
+            paddingBottom: 30,
         },
     });
 
@@ -51,9 +66,59 @@ const HomeScreen = ({navigation}) => {
                         />
                     }
                     contentContainerStyle={styles.container}>
-                    <MoviesSlider data={''} />
-                    <PopularSection title={Strings.Popular_Movies} data={''} />
-                    {/* <PopularSection title={Strings.Popular_TV}/> */}
+                    {/* Movie SLider */}
+                    <MoviesSlider data={slideData} />
+
+                    {/* Popular Indian Movie Section */}
+                    <Section
+                        title={Strings.Popular_Movies}
+                        TypeData={TypeData}
+                        data={movieData}
+                    />
+
+                    {/* Popular Indian TV Shows Section */}
+                    <Section
+                        title={Strings.Popular_TV}
+                        TypeData={TypeData}
+                        data={TVData}
+                    />
+
+                    {/* Featured today Section */}
+
+                    {/* What to watch Section */}
+                    <WhatToWatch
+                        outTitle={Strings.What_to_Watch}
+                        title={Strings.From_your_Watchlist}
+                    />
+
+                    {/* Popular Indian Comedy picks Section */}
+                    <Section
+                        title={Strings.Popular_Indian_Comedy_Picks}
+                        TypeData={TypeData}
+                        data={comedyData}
+                    />
+
+                    {/* Fan Favorites  Section */}
+                    <Section
+                        title={Strings.Fan_Favorites}
+                        TypeData={TypeData}
+                        data={fanFavorites}
+                    />
+
+                    {/* Top box office */}
+                    <TopBoxOffice
+                        title={Strings.Top_Box_Office}
+                        data={TopBox}
+                    />
+
+                    {/* Born Today */}
+                    <BornToday data={bornToDay} />
+
+                    {/* Top News Section */}
+                    <TopNewsSection data={topNews} />
+
+                    {/* Social Button Section */}
+                    <Social />
                 </ScrollView>
             ) : (
                 <ConnectionLostView />
