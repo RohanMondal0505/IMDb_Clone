@@ -35,6 +35,10 @@ const TopNewsSection = props => {
 export default TopNewsSection;
 
 const {width} = Dimensions.get('window');
+let w = 0;
+
+if (width > 500) w = width / 2 - 20;
+else w = width;
 
 const News = ({data, colors}) => {
     return (
@@ -53,7 +57,7 @@ const News = ({data, colors}) => {
                     <View
                         style={{
                             flex: 1,
-                            width: width / 2 - 20,
+                            width: w,
                             height: 130,
                             marginRight: 20,
                             flexDirection: 'row',
