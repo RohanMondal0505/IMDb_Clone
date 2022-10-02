@@ -33,7 +33,7 @@ const Section = props => {
 
     return (
         <View style={styles.SectionContainer}>
-            <TitleContainer title={props.title}/>
+            <TitleContainer title={props.title} />
 
             {props.title === Strings.Top_Pics_for_you_Text ? (
                 <SubTitleContainer
@@ -93,6 +93,7 @@ const SubTitleContainer = props => (
     </View>
 );
 
+// FIXME:
 const TypeContainer = props => {
     const styles = StyleSheet.create({
         ViewStyle: {
@@ -327,8 +328,14 @@ const ListItem = ({colors, data}) => {
                     </Text>
                 </Pressable>
             </View>
-
-            <PlusButton />
+            <View
+                style={{
+                    position: 'absolute',
+                    top: 0,
+                    left: 0,
+                }}>
+                <PlusButton />
+            </View>
         </Pressable>
     );
 };
