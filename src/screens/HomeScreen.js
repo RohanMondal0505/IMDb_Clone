@@ -1,11 +1,11 @@
-import {useNetInfo} from '@react-native-community/netinfo';
-import {useTheme} from '@react-navigation/native';
-import React, {useState} from 'react';
+import { useNetInfo } from '@react-native-community/netinfo';
+import { useTheme } from '@react-navigation/native';
+import React, { useState } from 'react';
 import {
     RefreshControl,
     SafeAreaView,
     ScrollView,
-    StyleSheet,
+    StyleSheet
 } from 'react-native';
 import {
     bornToDay,
@@ -16,9 +16,9 @@ import {
     TopBox,
     topNews,
     TVData,
-    TypeData,
+    TypeData
 } from '../../StaticData';
-import {Strings} from '../assets/values/Strings';
+import { Strings } from '../assets/values/Strings';
 import BornToday from '../components/home/BornToday';
 import ConnectionLostView from '../components/home/ConnectionLostView';
 import MoviesSlider from '../components/home/MoviesSlider';
@@ -65,7 +65,7 @@ const HomeScreen = ({navigation}) => {
                             ]}
                         />
                     }
-                    contentContainerStyle={styles.container}>
+                    contentContainerStyle={styles.container}>                  
                     {/* Movie SLider */}
                     <MoviesSlider data={slideData} />
 
