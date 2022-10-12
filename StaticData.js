@@ -10,21 +10,20 @@ export const slideData = [
 
 export const TypeData = [
     {
-        item1: [
-            {
-                i1: 'Other Providers',
-                i2: 'Prime Video',
-                i3: 'Prime Video(Rent/Buy)',
-                i4: 'In Theatres',
-            },
+        item: [
+            'Other Providers',
+            'Prime Video',
+            'Prime Video(Rent/Buy)',
+            'In Theatres',
         ],
-        item2: [
-            {
-                i1: 'Drama',
-                i2: 'Action',
-                i3: 'Thriller',
-                i4: 'More...',
-            },
+    },
+    {
+        item: [
+            'Other Providers',
+            'Prime Video',
+            'Prime Video(Rent/Buy)',
+            'In Theatres',
+            'In Theatres',
         ],
     },
 ];
@@ -332,33 +331,33 @@ export const bornToDay = [
     {
         image: 'https://i.guim.co.uk/img/media/d0d983846ba253cc749ecf17ac23b302790d4149/14_88_2442_1465/master/2442.jpg?width=1200&height=1200&quality=85&auto=format&fit=crop&s=9536a5786b0e0cabc18b8690e6703ab4',
         name: 'Emilia Clarke',
-        age: '23 October 1986',
+        age: '3 October 1986',
     },
 ];
 
 export const TopBox = [
     {
         title: "Don't Worry Darling",
-        price:'19.3M'
+        price: '19.3M',
     },
     {
-        title: "The Women King",
-        price:'11M'
+        title: 'The Women King',
+        price: '11M',
     },
     {
-        title: "Avatar",
-        price:'10.5M'
+        title: 'Avatar',
+        price: '10.5M',
     },
     {
-        title: "Barbarian",
-        price:'4.8M'
+        title: 'Barbarian',
+        price: '4.8M',
     },
     {
-        title: "See How They Run",
-        price:'1.9M'
+        title: 'See How They Run',
+        price: '1.9M',
     },
     {
-        title: "Pearl",
-        price:'1.8M'
+        title: 'Pearl',
+        price: '1.8M',
     },
-]
+];
