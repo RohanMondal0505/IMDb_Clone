@@ -111,60 +111,32 @@ const TypeContainer = props => {
             borderColor: props.colors.inActiveIconColor,
         },
     });
-
+    
     return (
         <ScrollView
             horizontal
             showsHorizontalScrollIndicator={false}
             contentContainerStyle={{marginVertical: 10, marginTop: 25}}>
-            <View style={styles.ViewStyle}>
-                <Pressable
-                    style={({pressed}) => [
-                        {
-                            backgroundColor: pressed
-                                ? 'rgba(210, 230, 255,.3)'
-                                : 'transparent',
-                        },
-                    ]}>
-                    <Text style={styles.TextStyle}>Other Provider</Text>
-                </Pressable>
-
-                <Pressable
-                    style={({pressed}) => [
-                        {
-                            backgroundColor: pressed
-                                ? 'rgba(210, 230, 255,.3)'
-                                : 'transparent',
-                            borderRadius: 20,
-                        },
-                    ]}>
-                    <Text style={styles.TextStyle}>Prime Videos</Text>
-                </Pressable>
-            </View>
-
-            <View style={styles.ViewStyle}>
-                <Pressable
-                    style={({pressed}) => [
-                        {
-                            backgroundColor: pressed
-                                ? 'rgba(210, 230, 255,.3)'
-                                : 'transparent',
-                        },
-                    ]}>
-                    <Text style={styles.TextStyle}>Other Provider</Text>
-                </Pressable>
-                <Pressable
-                    style={({pressed}) => [
-                        {
-                            backgroundColor: pressed
-                                ? 'rgba(210, 230, 255,.3)'
-                                : 'transparent',
-                            borderRadius: 20,
-                        },
-                    ]}>
-                    <Text style={styles.TextStyle}>Prime Videos</Text>
-                </Pressable>
-            </View>
+            {props.TypeData.map(item => {
+                return (
+                    <View style={[styles.ViewStyle]}>
+                        {item.item.map(item => {
+                            return (
+                                <Pressable
+                                    style={({pressed}) => [
+                                        {
+                                            backgroundColor: pressed
+                                                ? 'rgba(210, 230, 255,.3)'
+                                                : 'transparent',
+                                        },
+                                    ]}>
+                                    <Text style={styles.TextStyle}>{item}</Text>
+                                </Pressable>
+                            );
+                        })}
+                    </View>
+                );
+            })}
         </ScrollView>
     );
 };
