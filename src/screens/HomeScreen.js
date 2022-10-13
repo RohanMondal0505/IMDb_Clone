@@ -12,10 +12,12 @@ import {
     comedyData,
     fanFavorites,
     movieData,
+    MovieTypeData,
     slideData,
     TopBox,
     topNews,
     TVData,
+    TVTypeData,
     TypeData
 } from '../../StaticData';
 import { Strings } from '../assets/values/Strings';
@@ -65,21 +67,21 @@ const HomeScreen = ({navigation}) => {
                             ]}
                         />
                     }
-                    contentContainerStyle={styles.container}>                  
+                    contentContainerStyle={styles.container}>
                     {/* Movie SLider */}
                     <MoviesSlider data={slideData} />
 
                     {/* Popular Indian Movie Section */}
                     <Section
                         title={Strings.Popular_Movies}
-                        TypeData={TypeData}
+                        TypeData={MovieTypeData}
                         data={movieData}
                     />
 
                     {/* Popular Indian TV Shows Section */}
                     <Section
                         title={Strings.Popular_TV}
-                        TypeData={TypeData}
+                        TypeData={TVTypeData}
                         data={TVData}
                     />
 
