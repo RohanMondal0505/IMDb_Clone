@@ -22,6 +22,7 @@ export const CustomDarkColors = {
     bottomBarColor: '#1D1D1D',
     bottomBarOverlay: 'rgba(245, 197, 24,.3)',
     SocialButtonColor: '#BCBCBC',
+    overlayColor:'rgba(255,255,255,.2)'
 };
 
 export const CustomLightColors = {
@@ -42,4 +43,5 @@ export const CustomLightColors = {
     bottomBarColor: '#FFFFFF',
     bottomBarOverlay: '#D3D3D3',
     SocialButtonColor: '#4B4B4B',
+    overlayColor: 'rgba(0,0,0,.2)',
 };
