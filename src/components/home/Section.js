@@ -117,12 +117,11 @@ const TypeContainer = props => {
             horizontal
             showsHorizontalScrollIndicator={false}
             contentContainerStyle={{marginVertical: 10, marginTop: 25}}>
-            {props.TypeData.map(item => {
-                return (
-                    <View style={[styles.ViewStyle]}>
-                        {item.item.map(item => {
-                            return (
+            {props.TypeData.map((item,index) => (
+                    <View style={[styles.ViewStyle]} key={index}>
+                        {item.item.map((item,index) => (
                                 <Pressable
+                                    key={index}
                                     style={({pressed}) => [
                                         {
                                             backgroundColor: pressed
@@ -132,11 +131,11 @@ const TypeContainer = props => {
                                     ]}>
                                     <Text style={styles.TextStyle}>{item}</Text>
                                 </Pressable>
-                            );
-                        })}
+                            )
+                        )}
                     </View>
-                );
-            })}
+                )
+            )}
         </ScrollView>
     );
 };
