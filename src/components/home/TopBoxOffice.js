@@ -69,7 +69,12 @@ const TopBoxOffice = props => {
                                     }}>
                                     {item.title}
                                 </Text>
-                                <Text>${item.price}</Text>
+                                <Text
+                                    style={{
+                                        color: colors.textColor,
+                                    }}>
+                                    ${item.price}
+                                </Text>
                             </View>
                         </View>
 
