@@ -8,6 +8,32 @@ export const slideData = [
     'https://m.media-amazon.com/images/M/MV5BNzJiMTI3ZTMtNTFhYy00OWNhLWExYjItNzU4NmRkNzdmYmJkXkEyXkFqcGdeQXVyMTEzNzg0Mjkx._V1_.jpg',
 ];
 
+export const MovieTypeData = [
+    {
+        item: [
+            'Other Providers',
+            'Prime Video',
+            'Prime Video(Rent/Buy)',
+            'In Theatres',
+        ],
+    },
+    {
+        item: ['Drama', 'Thriller', 'Action', 'More...'],
+    },
+];
+
+export const TVTypeData = [
+    {
+        item: [
+            'Other Providers',
+            'Prime Video',
+        ],
+    },
+    {
+        item: ['Drama', 'Thriller', 'Crime', 'More...'],
+    },
+];
+
 export const TypeData = [
     {
         item: [
@@ -18,13 +44,7 @@ export const TypeData = [
         ],
     },
     {
-        item: [
-            'Other Providers',
-            'Prime Video',
-            'Prime Video(Rent/Buy)',
-            'In Theatres',
-            'In Theatres',
-        ],
+        item: ['Drama', 'Thriller', 'Action', 'More...'],
     },
 ];
 
