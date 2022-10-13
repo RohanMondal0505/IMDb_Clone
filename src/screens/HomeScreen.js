@@ -45,7 +45,7 @@ const HomeScreen = ({navigation}) => {
             flex: 1,
             backgroundColor: colors.mainBackgroundColor,
         },
-        container: {
+        Container: {
             width: '100%',
             paddingTop: 8,
             paddingBottom: 30,
@@ -67,7 +67,7 @@ const HomeScreen = ({navigation}) => {
                             ]}
                         />
                     }
-                    contentContainerStyle={styles.container}>
+                    contentContainerStyle={styles.Container}>
                     {/* Movie SLider */}
                     <MoviesSlider data={slideData} />
 
