@@ -31,7 +31,7 @@ export const Strings = {
     Top_Box_Office: 'Top Box Office',
     Weekend: 'Weekend of 23 - 25 September',
     Sign_in_Sign_up:'Sign in / Sign up',
-    SIGH_OUT: 'SIGH OUT',
+    SIGN_OUT: 'SIGN OUT',
     USER: 'USER',
     Account: 'Account',
     Watch_preferences: 'Watch preferences',
