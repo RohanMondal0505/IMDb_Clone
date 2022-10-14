@@ -8,7 +8,9 @@ import {
     CustomDarkColors,
     CustomLightColors,
 } from '../assets/values/CustomColors';
+import {GlobalVariables} from '../Context/AppContext';
 import BottomTabs from './BottomTabs';
+import LoginNavigation from './LoginNavigation';
 
 const customDarkTheme = {
     ...DarkTheme,
@@ -26,15 +28,15 @@ const customLightTheme = {
     },
 };
 
-const RootNavigation = () => {
+const Routes = () => {
     const colorScheme = useColorScheme();
-
+    const {user} = GlobalVariables();
     return (
         <NavigationContainer
             theme={colorScheme === 'dark' ? customDarkTheme : customLightTheme}>
-            <BottomTabs />
+            {user ? <BottomTabs /> : <LoginNavigation />}
         </NavigationContainer>
     );
 };
 
-export default RootNavigation;
+export default Routes;
