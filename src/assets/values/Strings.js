@@ -43,5 +43,9 @@ export const Strings = {
     SIGN_IN_WITH_IMDb: 'SIGN IN WITH IMDb',
     CREATE_AN_ACCOUNT: "CREATE AN ACCOUNT",
     SIGN_WITH_GOOGLE: 'SIGN WITH GOOGLE',
-    SIGN_WITH_FACEBOOK:'SIGN WITH FACEBOOK',
+    SIGN_WITH_FACEBOOK: 'SIGN WITH FACEBOOK',
+    Unlock_all_that_IMDb_has_to_offer: 'Unlock all that IMDb has to offer',
+    or: 'or',
+    By_signing_in_you_agree_to: 'By signing in, you agree to ',
+    IMDb_Condition_of_Use:"IMDb's Conditions of Use",
 };
