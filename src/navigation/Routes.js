@@ -9,8 +9,8 @@ import {
     CustomLightColors,
 } from '../assets/values/CustomColors';
 import {GlobalVariables} from '../Context/AppContext';
-import BottomTabs from './BottomTabs';
-import LoginNavigation from './LoginNavigation';
+import AuthStack from './AuthStack';
+import AppStack from './AppStack';
 
 const customDarkTheme = {
     ...DarkTheme,
@@ -34,7 +34,7 @@ const Routes = () => {
     return (
         <NavigationContainer
             theme={colorScheme === 'dark' ? customDarkTheme : customLightTheme}>
-            {user ? <BottomTabs /> : <LoginNavigation />}
+            {user ? <AppStack /> : <AuthStack />}
         </NavigationContainer>
     );
 };
