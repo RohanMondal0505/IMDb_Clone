@@ -12,6 +12,8 @@ export const CustomDarkColors = {
     plusIconBackgroundColor: 'rgba(104,104,104,0.7)',
     white: '#fff',
     black: '#000',
+    googleIcon: '#1976D3',
+    facebookIcon: '#1878F3',
 
     //Change Colors
     mainBackgroundColor: '#191919',
@@ -33,6 +35,8 @@ export const CustomLightColors = {
     plusIconBackgroundColor: 'rgba(104,104,104,0.7)',
     white: '#fff',
     black: '#000',
+    googleIcon: '#1976D3',
+    facebookIcon: '#1878F3',
 
     //Change Colors
     mainBackgroundColor: '#EEEEEE',
