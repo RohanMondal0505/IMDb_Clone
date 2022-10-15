@@ -39,5 +39,9 @@ export const Strings = {
     GENERAL: 'GENERAL',
     Display:'Display',
     Storage:'Storage',
-    About:'About',
+    About: 'About',
+    SIGN_IN_WITH_IMDb: 'SIGN IN WITH IMDb',
+    CREATE_AN_ACCOUNT: "CREATE AN ACCOUNT",
+    SIGN_WITH_GOOGLE: 'SIGN WITH GOOGLE',
+    SIGN_WITH_FACEBOOK:'SIGN WITH FACEBOOK',
 };
