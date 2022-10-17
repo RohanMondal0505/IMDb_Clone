@@ -47,6 +47,7 @@ const SignupScreen = ({navigation}) => {
                         <View style={[styles.ItemView]}>
                             <TextInput
                                 placeholder={Strings.First_and_last_name}
+                                placeholderTextColor={colors.inActiveIconColor}
                                 value={name}
                                 onChangeText={txt => setName(txt)}
                                 autocomplete={'name'}
@@ -57,12 +58,14 @@ const SignupScreen = ({navigation}) => {
                                     {
                                         backgroundColor: colors.white,
                                         borderColor: colors.overlayColor,
+                                        color: colors.black,
                                     },
                                 ]}
                             />
 
                             <TextInput
                                 placeholder={Strings.Your_email_address}
+                                placeholderTextColor={colors.inActiveIconColor}
                                 value={email}
                                 onChangeText={txt => setEmail(txt)}
                                 keyboardType={'email-address'}
@@ -74,12 +77,16 @@ const SignupScreen = ({navigation}) => {
                                     {
                                         backgroundColor: colors.white,
                                         borderColor: colors.overlayColor,
+                                        color: colors.black,
                                     },
                                 ]}
                             />
                             <View style={styles.InnerItemView}>
                                 <TextInput
                                     placeholder={Strings.Create_a_password}
+                                    placeholderTextColor={
+                                        colors.inActiveIconColor
+                                    }
                                     value={password}
                                     onChangeText={txt => setPassword(txt)}
                                     keyboardType={'password'}
@@ -92,6 +99,7 @@ const SignupScreen = ({navigation}) => {
                                         {
                                             backgroundColor: colors.white,
                                             borderColor: colors.overlayColor,
+                                            color: colors.black,
                                             paddingRight: 50,
                                         },
                                     ]}
@@ -99,6 +107,7 @@ const SignupScreen = ({navigation}) => {
                                 <Icon
                                     name={secureText ? 'eye-slash' : 'eye'}
                                     size={18}
+                                    color={colors.black}
                                     onPress={() => setSecureText(!secureText)}
                                     style={{
                                         textAlign: 'center',
@@ -109,10 +118,11 @@ const SignupScreen = ({navigation}) => {
                                 />
                             </View>
                         </View>
+
                         <View
                             style={{
                                 flexDirection: 'row',
-                                alignItems:'center',
+                                alignItems: 'center',
                                 marginBottom: 30,
                             }}>
                             <Info
@@ -130,6 +140,7 @@ const SignupScreen = ({navigation}) => {
                                 {Strings.Password_must_be_at_least_8_characters}
                             </Text>
                         </View>
+                        
                         <TouchableOpacity
                             onPress={() => register(email, password)}
                             style={[
@@ -139,7 +150,7 @@ const SignupScreen = ({navigation}) => {
                                     borderColor: colors.overlayColor,
                                 },
                             ]}>
-                            <Text style={styles.Text}>
+                            <Text style={[styles.Text, {color: colors.black}]}>
                                 {Strings.Create_your_IMDb_account}
                             </Text>
                         </TouchableOpacity>
@@ -168,15 +179,22 @@ const SignupScreen = ({navigation}) => {
                         </View>
 
                         <TouchableOpacity
-                            onPress={() => navigation.navigate('Login')}
+                            onPress={() => {
+                                navigation.navigate('Login');
+                                setName('');
+                                setEmail('');
+                                setPassword('');
+                            }}
+                            activeOpacity={0.8}
                             style={[
                                 styles.TouchableOpacity,
                                 {
-                                    backgroundColor: colors.mainBackgroundColor,
+                                    backgroundColor:
+                                        colors.TouchableBackgroundColor,
                                     borderColor: colors.overlayColor,
                                 },
                             ]}>
-                            <Text style={styles.Text}>
+                            <Text style={[styles.Text, {color: colors.black}]}>
                                 {Strings.Sign_In_now}
                             </Text>
                         </TouchableOpacity>

@@ -55,6 +55,7 @@ const LoginScreen = ({navigation}) => {
                             ]}>
                             <TextInput
                                 placeholder={Strings.Email}
+                                placeholderTextColor={colors.inActiveIconColor}
                                 value={email}
                                 onChangeText={txt => setEmail(txt)}
                                 keyboardType={'email-address'}
@@ -63,12 +64,18 @@ const LoginScreen = ({navigation}) => {
                                 autoCorrect={false}
                                 style={[
                                     styles.TextInput,
-                                    {backgroundColor: colors.white},
+                                    {
+                                        backgroundColor: colors.white,
+                                        color: colors.black,
+                                    },
                                 ]}
                             />
                             <View style={styles.InnerItemView}>
                                 <TextInput
                                     placeholder={Strings.IMDb_Password}
+                                    placeholderTextColor={
+                                        colors.inActiveIconColor
+                                    }
                                     value={password}
                                     onChangeText={txt => setPassword(txt)}
                                     keyboardType={'password'}
@@ -80,6 +87,7 @@ const LoginScreen = ({navigation}) => {
                                         styles.TextInput,
                                         {
                                             backgroundColor: colors.white,
+                                            color: colors.black,
                                             paddingRight: 50,
                                         },
                                     ]}
@@ -87,6 +95,7 @@ const LoginScreen = ({navigation}) => {
                                 <Icon
                                     name={secureText ? 'eye-slash' : 'eye'}
                                     size={18}
+                                    color={colors.black}
                                     onPress={() => setSecureText(!secureText)}
                                     style={{
                                         textAlign: 'center',
@@ -107,7 +116,9 @@ const LoginScreen = ({navigation}) => {
                                     borderColor: colors.overlayColor,
                                 },
                             ]}>
-                            <Text style={styles.Text}>{Strings.Sign_in}</Text>
+                            <Text style={[styles.Text, {color: colors.black}]}>
+                                {Strings.Sign_in}
+                            </Text>
                         </TouchableOpacity>
                         <View
                             style={{
@@ -134,14 +145,16 @@ const LoginScreen = ({navigation}) => {
 
                         <TouchableOpacity
                             onPress={() => navigation.navigate('Signup')}
+                            activeOpacity={0.8}
                             style={[
                                 styles.TouchableOpacity,
                                 {
-                                    backgroundColor: colors.mainBackgroundColor,
+                                    backgroundColor:
+                                        colors.TouchableBackgroundColor,
                                     borderColor: colors.overlayColor,
                                 },
                             ]}>
-                            <Text style={styles.Text}>
+                            <Text style={[styles.Text, {color: colors.black}]}>
                                 {Strings.Create_a_new_IMDb_account}
                             </Text>
                         </TouchableOpacity>
