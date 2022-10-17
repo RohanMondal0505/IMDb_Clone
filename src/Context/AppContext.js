@@ -92,6 +92,7 @@ export const AppProvider = ({children}) => {
     const logout = async () => {
         try {
             await auth().signOut();
+            setUser(null);
             await AsyncStorage.setItem('UserData', JSON.stringify(null));
         } catch (error) {
             customAlert(error);
