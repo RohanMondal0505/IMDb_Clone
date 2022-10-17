@@ -1,13 +1,13 @@
 import {useTheme} from '@react-navigation/native';
 import React from 'react';
 
-import {SafeAreaView, StyleSheet, Text, View} from 'react-native';
-import HeaderSection from '../components/Profile/HeaderSection';
+import {SafeAreaView, StyleSheet, View} from 'react-native';
 import Buttons from '../components/Profile/Buttons';
+import HeaderSection from '../components/Profile/HeaderSection';
 
-const ProfileScreen = () => {
-    const { colors } = useTheme();
-    
+const ProfileScreen = ({navigation}) => {
+    const {colors} = useTheme();
+
     const styles = StyleSheet.create({
         MainContainer: {
             flex: 1,
@@ -17,12 +17,11 @@ const ProfileScreen = () => {
             width: '100%',
         },
     });
-
     return (
         <SafeAreaView style={styles.MainContainer}>
             <View style={styles.Container}>
-                <HeaderSection name="Rohan" />
-                <Buttons/>
+                <HeaderSection/>
+                <Buttons />
             </View>
         </SafeAreaView>
     );
