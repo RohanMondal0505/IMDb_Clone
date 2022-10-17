@@ -14,6 +14,7 @@ export const CustomDarkColors = {
     black: '#000',
     googleIcon: '#1976D3',
     facebookIcon: '#1878F3',
+    TouchableBackgroundColor: '#c7c3c3',
 
     //Change Colors
     mainBackgroundColor: '#191919',
@@ -24,7 +25,7 @@ export const CustomDarkColors = {
     bottomBarColor: '#1D1D1D',
     bottomBarOverlay: 'rgba(245, 197, 24,.3)',
     SocialButtonColor: '#BCBCBC',
-    overlayColor:'rgba(255,255,255,.2)'
+    overlayColor: 'rgba(255,255,255,.2)',
 };
 
 export const CustomLightColors = {
@@ -37,6 +38,7 @@ export const CustomLightColors = {
     black: '#000',
     googleIcon: '#1976D3',
     facebookIcon: '#1878F3',
+    TouchableBackgroundColor: '#c7c3c3',
 
     //Change Colors
     mainBackgroundColor: '#EEEEEE',
