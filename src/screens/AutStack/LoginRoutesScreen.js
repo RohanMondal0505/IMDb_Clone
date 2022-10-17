@@ -12,9 +12,25 @@ const LoginRoutesScreen = ({navigation}) => {
             style={{
                 flex: 1,
                 alignItems: 'center',
-                justifyContent: 'space-evenly',
                 padding: 20,
             }}>
+            <Text
+                style={{
+                    fontSize: 28,
+                    color: colors.textColor,
+                    fontFamily: CustomFonts.Regular,
+                    marginTop: 35,
+                }}>
+                {Strings.Unlock_all_that_IMDb_has_to_offer}
+            </Text>
+            <View
+                style={{
+                    height: 2,
+                    width: 150,
+                    backgroundColor: colors.primaryColor,
+                    marginVertical: 5,
+                }}
+            />
             <SocialButton
                 colors={colors.black}
                 text={Strings.SIGN_IN_WITH_IMDb}
@@ -36,6 +52,14 @@ const LoginRoutesScreen = ({navigation}) => {
                 image={Images.facebook}
                 onPress={() => console.log('Facebook')}
             />
+            <Text
+                style={{
+                    fontSize: 22,
+                    color: colors.textColor,
+                    fontFamily: CustomFonts.Regular,
+                }}>
+                {Strings.or}
+            </Text>
             <SocialButton
                 colors={colors.black}
                 text={Strings.CREATE_AN_ACCOUNT}
@@ -43,6 +67,22 @@ const LoginRoutesScreen = ({navigation}) => {
                 image={null}
                 onPress={() => navigation.navigate('Signup')}
             />
+            <Text
+                style={{
+                    fontSize: 12,
+                    color: colors.textColor,
+                    fontFamily: CustomFonts.Regular,
+                }}>
+                {Strings.By_signing_in_you_agree_to}
+                <Text
+                    style={{
+                        fontSize: 12,
+                        color: colors.headingTextColor,
+                        fontFamily: CustomFonts.Regular,
+                    }}>
+                    {Strings.IMDb_Condition_of_Use}
+                </Text>
+            </Text>
         </View>
     );
 };
@@ -62,6 +102,7 @@ const SocialButton = ({colors, onPress, text, backgroundColor, image}) => (
             elevation: 5,
             borderRadius: 3,
             overflow: 'hidden',
+            marginVertical: 12,
         }}>
         {image ? (
             <Image
