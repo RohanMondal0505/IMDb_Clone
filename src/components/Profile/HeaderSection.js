@@ -1,11 +1,15 @@
 import {useTheme} from '@react-navigation/native';
 import React from 'react';
-import {Pressable, Text, View} from 'react-native';
+import {Pressable, StyleSheet, Text, View} from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
-import { CustomFonts } from '../../assets/values/CustomFonts';
+import {CustomFonts} from '../../assets/values/CustomFonts';
+import {Strings} from '../../assets/values/Strings';
+import {GlobalVariables} from '../../Context/AppContext';
 
-const HeaderSection = ({name}) => {
+const HeaderSection = () => {
     const {colors} = useTheme();
+    const { user, logout } = GlobalVariables();
+    
     return (
         <View
             style={{
@@ -15,17 +19,27 @@ const HeaderSection = ({name}) => {
                 alignItems: 'center',
                 justifyContent: 'space-between',
             }}>
-            <Icon name="account-circle" color={colors.primaryColor} size={35} />
-            <Text
+            <View
                 style={{
-                    marginLeft: 10,
-                    color: colors.textColor,
-                    fontSize: 22,
-                    fontFamily: CustomFonts.Bold,
+                    flexDirection: 'row',
                 }}>
-                {name}
-            </Text>
+                <Icon
+                    name="account-circle"
+                    color={colors.primaryColor}
+                    size={35}
+                />
+                <Text
+                    style={{
+                        marginLeft: 10,
+                        color: colors.textColor,
+                        fontSize: 22,
+                        fontFamily: CustomFonts.Bold,
+                    }}>
+                    {user.uid}
+                </Text>
+            </View>
             <Pressable
+                onPress={() => logout()}
                 style={({pressed}) => [
                     {
                         paddingVertical: 10,
@@ -37,8 +51,11 @@ const HeaderSection = ({name}) => {
                     },
                 ]}>
                 <Text
-                    style={{color: colors.headingTextColor, letterSpacing: 2}}>
-                    SIGH OUT
+                    style={{
+                        color: colors.headingTextColor,
+                        letterSpacing: 2,
+                    }}>
+                    {Strings.SIGN_OUT}
                 </Text>
             </Pressable>
         </View>

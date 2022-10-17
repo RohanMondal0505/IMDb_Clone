@@ -2,9 +2,12 @@ import {useTheme} from '@react-navigation/native';
 import React from 'react';
 import {Text, TouchableOpacity, View} from 'react-native';
 import {Strings} from '../../assets/values/Strings';
+import { GlobalVariables } from '../../Context/AppContext';
 
 const UserButtons = () => {
-    const {colors} = useTheme();
+    const { colors } = useTheme();
+    const {user} = GlobalVariables();
+    
     return (
         <View
             style={{
@@ -21,7 +24,7 @@ const UserButtons = () => {
                 }}>
                 {Strings.USER}
             </Text>
-            <Button title={Strings.Account} colors={colors} />
+            {user ? <Button title={Strings.Account} colors={colors} /> : null}
             <Button title={Strings.Watch_preferences} colors={colors} />
             <Button title={Strings.Notification} colors={colors} />
             <Text
@@ -36,15 +39,16 @@ const UserButtons = () => {
             </Text>
             <Button title={Strings.Display} colors={colors} />
             <Button title={Strings.Storage} colors={colors} />
-            <Button title={Strings.About} colors={colors} />
+            <Button title={Strings.About} colors={colors} onPress={() => { console.log("About")}} />
         </View>
     );
 };
 
 export default UserButtons;
 
-const Button = ({title, colors}) => (
+const Button = ({title, colors,onPress}) => (
     <TouchableOpacity
+        onPress={onPress}
         activeOpacity={0.5}
         style={{
             backgroundColor: colors.componentsBackgroundColor,
