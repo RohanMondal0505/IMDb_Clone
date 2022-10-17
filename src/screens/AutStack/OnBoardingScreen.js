@@ -12,8 +12,8 @@ const OnBoardingScreen = ({navigation}) => {
     return (
         <Onboarding
             DoneButtonComponent={Done}
-            onSkip={() => navigation.replace('Login')}
-            onDone={() => navigation.navigate('Login')}
+            onSkip={() => navigation.replace('LoginRoutes')}
+            onDone={() => navigation.navigate('LoginRoutes')}
             pages={[
                 {
                     backgroundColor: '#ff0',
