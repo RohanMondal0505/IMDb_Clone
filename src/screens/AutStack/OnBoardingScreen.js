@@ -1,21 +1,39 @@
 import React from 'react';
+import {Image, Text, TouchableOpacity} from 'react-native';
 import Onboarding from 'react-native-onboarding-swiper';
 
 const OnBoardingScreen = ({navigation}) => {
+    const Done = ({...props}) => (
+        <TouchableOpacity {...props} style={{marginHorizontal: 20}}>
+            <Text style={{fontSize:16,fontWeight:'500'}}>Done</Text>
+        </TouchableOpacity>
+    );
+
     return (
         <Onboarding
-            onSkip={() => navigation.navigate('Login')}
+            DoneButtonComponent={Done}
+            onSkip={() => navigation.replace('Login')}
             onDone={() => navigation.navigate('Login')}
             pages={[
                 {
-                    backgroundColor: '#fff',
-                    image: <Image source={require('../../assets/images/IMDb_App_Icon.png')} />,
+                    backgroundColor: '#ff0',
+                    image: (
+                        <Image
+                            source={require('../../assets/images/IMDb_App_Icon.png')}
+                            style={{height: 200, width: 200}}
+                        />
+                    ),
                     title: 'Onboarding 1',
                     subtitle: 'React Native',
                 },
                 {
                     backgroundColor: '#fff',
-                    image: <Image source={require('../../assets/images/IMDb_App_Icon.png')} />,
+                    image: (
+                        <Image
+                            source={require('../../assets/images/IMDb_App_Icon.png')}
+                            style={{height: 200, width: 200}}
+                        />
+                    ),
                     title: 'Onboarding 2',
                     subtitle: 'Done with React Native Onboarding Swiper',
                 },
