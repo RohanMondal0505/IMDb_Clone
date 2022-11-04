@@ -1,6 +1,6 @@
 import {useTheme} from '@react-navigation/native';
-import React from 'react';
-import {Pressable, StyleSheet, Text, View} from 'react-native';
+import React, {useEffect} from 'react';
+import {Pressable, Text, View} from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import {CustomFonts} from '../../assets/values/CustomFonts';
 import {Strings} from '../../assets/values/Strings';
@@ -8,8 +8,12 @@ import {GlobalVariables} from '../../Context/AppContext';
 
 const HeaderSection = () => {
     const {colors} = useTheme();
-    const { user, logout } = GlobalVariables();
-    
+    const {user, logout, getUser, allUser} = GlobalVariables();
+
+    useEffect(() => {
+        getUser(user.uid);
+    }, []);
+
     return (
         <View
             style={{
@@ -35,7 +39,7 @@ const HeaderSection = () => {
                         fontSize: 22,
                         fontFamily: CustomFonts.Bold,
                     }}>
-                    {user.uid}
+                    {allUser.name}
                 </Text>
             </View>
             <Pressable
