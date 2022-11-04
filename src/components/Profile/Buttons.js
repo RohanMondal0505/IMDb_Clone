@@ -1,12 +1,10 @@
-import {useTheme} from '@react-navigation/native';
+import { useTheme } from '@react-navigation/native';
 import React from 'react';
-import {Text, TouchableOpacity, View} from 'react-native';
-import {Strings} from '../../assets/values/Strings';
-import { GlobalVariables } from '../../Context/AppContext';
+import { Text, TouchableOpacity, View } from 'react-native';
+import { Strings } from '../../assets/values/Strings';
 
-const UserButtons = () => {
+const UserButtons = ({navigation}) => {
     const { colors } = useTheme();
-    const {user} = GlobalVariables();
     
     return (
         <View
@@ -24,9 +22,9 @@ const UserButtons = () => {
                 }}>
                 {Strings.USER}
             </Text>
-            {user ? <Button title={Strings.Account} colors={colors} /> : null}
-            <Button title={Strings.Watch_preferences} colors={colors} />
-            <Button title={Strings.Notification} colors={colors} />
+            <Button title={Strings.Account} colors={colors} onPress={() => { navigation.navigate('Account');}}/>
+            <Button title={Strings.Watch_preferences} colors={colors} onPress={() => { console.log("Watch Preference")}}/>
+            <Button title={Strings.Notification} colors={colors} onPress={() => { console.log('Notification');}}/>
             <Text
                 style={{
                     color: colors.plusIconBackgroundColor,
@@ -37,8 +35,8 @@ const UserButtons = () => {
                 }}>
                 {Strings.GENERAL}
             </Text>
-            <Button title={Strings.Display} colors={colors} />
-            <Button title={Strings.Storage} colors={colors} />
+            <Button title={Strings.Display} colors={colors} onPress={() => { console.log("Display")}}/>
+            <Button title={Strings.Storage} colors={colors} onPress={() => { console.log("Storage")}}/>
             <Button title={Strings.About} colors={colors} onPress={() => { console.log("About")}} />
         </View>
     );
