@@ -20,8 +20,8 @@ const ProfileScreen = ({navigation}) => {
     return (
         <SafeAreaView style={styles.MainContainer}>
             <View style={styles.Container}>
-                <HeaderSection/>
-                <Buttons />
+                <HeaderSection />
+                <Buttons navigation={navigation} />
             </View>
         </SafeAreaView>
     );
