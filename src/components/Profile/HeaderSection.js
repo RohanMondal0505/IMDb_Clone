@@ -18,7 +18,7 @@ const HeaderSection = () => {
         <View
             style={{
                 flexDirection: 'row',
-                paddingHorizontal: 25,
+                paddingHorizontal: 15,
                 paddingVertical: 20,
                 alignItems: 'center',
                 justifyContent: 'space-between',
