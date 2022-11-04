@@ -7,6 +7,7 @@ import HomeScreen from '../screens/HomeScreen';
 import ProfileScreen from '../screens/ProfileScreen';
 import SearchScreen from '../screens/SearchScreen';
 import VideosScreen from '../screens/VideosScreen';
+import { ProfileStackScreen } from './StackScreen';
 
 const Tab = createBottomTabNavigator();
 
@@ -81,7 +82,7 @@ const BottomTabs = () => {
                 <Tab.Screen name="Home" component={HomeScreen} />
                 <Tab.Screen name="Search" component={SearchScreen} />
                 <Tab.Screen name="Videos" component={VideosScreen} />
-                <Tab.Screen name="Profile" component={ProfileScreen} />
+                <Tab.Screen name="Profile" component={ProfileStackScreen} />
             </Tab.Navigator>
         </>
     );
