@@ -1,6 +1,7 @@
 import {useTheme} from '@react-navigation/native';
 import React, {useState} from 'react';
 import {
+    ActivityIndicator,
     Dimensions,
     Image,
     KeyboardAvoidingView,
@@ -18,15 +19,20 @@ import Info from 'react-native-vector-icons/Fontisto';
 import {CustomFonts} from '../../assets/values/CustomFonts';
 import {Images} from '../../assets/values/Images';
 import {Strings} from '../../assets/values/Strings';
+import Loader from '../../components/Custom/Loader';
 import {GlobalVariables} from '../../Context/AppContext';
 
 const SignupScreen = ({navigation}) => {
     const {colors} = useTheme();
-    const {register} = GlobalVariables();
+    const {register, loading} = GlobalVariables();
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [secureText, setSecureText] = useState(true);
+
+    if (loading) {
+        return <Loader/>
+    }
 
     return (
         <SafeAreaView
@@ -140,9 +146,9 @@ const SignupScreen = ({navigation}) => {
                                 {Strings.Password_must_be_at_least_8_characters}
                             </Text>
                         </View>
-                        
+
                         <TouchableOpacity
-                            onPress={() => register(email, password)}
+                            onPress={() => register(email, password, name)}
                             style={[
                                 styles.TouchableOpacity,
                                 {

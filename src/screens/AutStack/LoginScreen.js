@@ -17,14 +17,20 @@ import Icon from 'react-native-vector-icons/FontAwesome5';
 import {CustomFonts} from '../../assets/values/CustomFonts';
 import {Images} from '../../assets/values/Images';
 import {Strings} from '../../assets/values/Strings';
+import Loader from '../../components/Custom/Loader';
 import {GlobalVariables} from '../../Context/AppContext';
 
 const LoginScreen = ({navigation}) => {
     const {colors} = useTheme();
-    const {login} = GlobalVariables();
+    const {login, loading} = GlobalVariables();
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [secureText, setSecureText] = useState(true);
+
+    if (loading) {
+        return <Loader />;
+    }
+
     return (
         <SafeAreaView
             style={{flex: 1, backgroundColor: colors.mainBackgroundColor}}>
