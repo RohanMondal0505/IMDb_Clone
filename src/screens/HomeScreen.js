@@ -1,11 +1,10 @@
-import { useNetInfo } from '@react-native-community/netinfo';
-import { useTheme } from '@react-navigation/native';
-import React, { useState } from 'react';
+import {useTheme} from '@react-navigation/native';
+import React, {useState} from 'react';
 import {
     RefreshControl,
     SafeAreaView,
     ScrollView,
-    StyleSheet
+    StyleSheet,
 } from 'react-native';
 import {
     bornToDay,
@@ -18,11 +17,10 @@ import {
     topNews,
     TVData,
     TVTypeData,
-    TypeData
+    TypeData,
 } from '../../StaticData';
-import { Strings } from '../assets/values/Strings';
+import {Strings} from '../assets/values/Strings';
 import BornToday from '../components/home/BornToday';
-import ConnectionLostView from '../components/home/ConnectionLostView';
 import MoviesSlider from '../components/home/MoviesSlider';
 import Section from '../components/home/Section';
 import Social from '../components/home/Social';
@@ -32,7 +30,6 @@ import WhatToWatch from '../components/home/WhatToWatch';
 
 const HomeScreen = ({navigation}) => {
     const {colors} = useTheme();
-    const netInfo = useNetInfo();
     const [refreshing, setRefreshing] = useState(false);
 
     const onRefresh = () => {
@@ -54,77 +51,67 @@ const HomeScreen = ({navigation}) => {
 
     return (
         <SafeAreaView style={styles.MainContainer}>
-            {netInfo.isInternetReachable ? (
-                <ScrollView
-                    refreshControl={
-                        <RefreshControl
-                            refreshing={refreshing}
-                            onRefresh={onRefresh}
-                            tintColor={colors.primaryColor}
-                            colors={[
-                                colors.primaryColor,
-                                colors.headingTextColor,
-                            ]}
-                        />
-                    }
-                    contentContainerStyle={styles.Container}>
-                    {/* Movie SLider */}
-                    <MoviesSlider data={slideData} />
-
-                    {/* Popular Indian Movie Section */}
-                    <Section
-                        title={Strings.Popular_Movies}
-                        TypeData={MovieTypeData}
-                        data={movieData}
+            <ScrollView
+                refreshControl={
+                    <RefreshControl
+                        refreshing={refreshing}
+                        onRefresh={onRefresh}
+                        tintColor={colors.primaryColor}
+                        colors={[colors.primaryColor, colors.headingTextColor]}
                     />
+                }
+                contentContainerStyle={styles.Container}>
+                {/* Movie SLider */}
+                <MoviesSlider data={slideData} />
 
-                    {/* Popular Indian TV Shows Section */}
-                    <Section
-                        title={Strings.Popular_TV}
-                        TypeData={TVTypeData}
-                        data={TVData}
-                    />
+                {/* Popular Indian Movie Section */}
+                <Section
+                    title={Strings.Popular_Movies}
+                    TypeData={MovieTypeData}
+                    data={movieData}
+                />
 
-                    {/* Featured today Section */}
+                {/* Popular Indian TV Shows Section */}
+                <Section
+                    title={Strings.Popular_TV}
+                    TypeData={TVTypeData}
+                    data={TVData}
+                />
 
-                    {/* What to watch Section */}
-                    <WhatToWatch
-                        outTitle={Strings.What_to_Watch}
-                        title={Strings.From_your_Watchlist}
-                    />
+                {/* Featured today Section */}
 
-                    {/* Popular Indian Comedy picks Section */}
-                    <Section
-                        title={Strings.Popular_Indian_Comedy_Picks}
-                        TypeData={TypeData}
-                        data={comedyData}
-                    />
+                {/* What to watch Section */}
+                <WhatToWatch
+                    outTitle={Strings.What_to_Watch}
+                    title={Strings.From_your_Watchlist}
+                />
 
-                    {/* Fan Favorites  Section */}
-                    <Section
-                        title={Strings.Fan_Favorites}
-                        TypeData={TypeData}
-                        data={fanFavorites}
-                    />
+                {/* Popular Indian Comedy picks Section */}
+                <Section
+                    title={Strings.Popular_Indian_Comedy_Picks}
+                    TypeData={TypeData}
+                    data={comedyData}
+                />
 
-                    {/* Top box office */}
-                    <TopBoxOffice
-                        title={Strings.Top_Box_Office}
-                        data={TopBox}
-                    />
+                {/* Fan Favorites  Section */}
+                <Section
+                    title={Strings.Fan_Favorites}
+                    TypeData={TypeData}
+                    data={fanFavorites}
+                />
 
-                    {/* Born Today */}
-                    <BornToday data={bornToDay} />
+                {/* Top box office */}
+                <TopBoxOffice title={Strings.Top_Box_Office} data={TopBox} />
 
-                    {/* Top News Section */}
-                    <TopNewsSection data={topNews} />
+                {/* Born Today */}
+                <BornToday data={bornToDay} />
 
-                    {/* Social Button Section */}
-                    <Social />
-                </ScrollView>
-            ) : (
-                <ConnectionLostView />
-            )}
+                {/* Top News Section */}
+                <TopNewsSection data={topNews} />
+
+                {/* Social Button Section */}
+                <Social />
+            </ScrollView>
         </SafeAreaView>
     );
 };
