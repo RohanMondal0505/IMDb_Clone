@@ -1,5 +1,6 @@
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import auth from '@react-native-firebase/auth';
+import firestore from '@react-native-firebase/firestore';
 import {useTheme} from '@react-navigation/native';
 import React, {createContext, useContext, useEffect, useState} from 'react';
 import {Alert} from 'react-native';
@@ -9,6 +10,8 @@ const AppContext = createContext();
 export const AppProvider = ({children}) => {
     const {colors} = useTheme();
     const [user, setUser] = useState(null);
+    const [loading, setLoading] = useState(false);
+    const [allUser, setAllUser] = useState([])
 
     const setUserDataInAsyncStorage = async data => {
         try {
@@ -38,6 +41,7 @@ export const AppProvider = ({children}) => {
     };
 
     const login = async (email, password) => {
+        setLoading(true);
         try {
             if (email == '' || email == null || email == undefined)
                 throw 'email empty';
@@ -62,15 +66,31 @@ export const AppProvider = ({children}) => {
                 customAlert('Warning !!', 'Password is Empty, Please Fill in');
             else console.log(error);
         }
+        setLoading(false);
     };
 
-    const register = async (email, password) => {
+    const register = async (email, password, name) => {
+        setLoading(true);
         try {
             if (email == '' || email == null || email == undefined)
                 throw 'email empty';
-            if (password == '' || password == null || password == undefined)
+            else if (
+                password == '' ||
+                password == null ||
+                password == undefined
+            )
                 throw 'password empty';
-            await auth().createUserWithEmailAndPassword(email, password);
+            else if (name == '' || name == null || name == undefined)
+                throw 'name empty';
+            const result = await auth().createUserWithEmailAndPassword(
+                email,
+                password,
+            );
+            firestore().collection('Users').doc(result.user.uid).set({
+                name: name,
+                email: result.user.email,
+                uid: result.user.uid,
+            });
         } catch (error) {
             if (error.code === 'auth/email-already-in-use')
                 customAlert('Warning !!', 'Email Already Present');
@@ -85,11 +105,15 @@ export const AppProvider = ({children}) => {
                 customAlert('Warning !!', 'Email is Empty, Please Fill in');
             else if (error === 'password empty')
                 customAlert('Warning !!', 'Password is Empty, Please Fill in');
+            else if (error === 'name empty')
+                customAlert('Warning !!', 'Name is Empty, Please Fill in');
             else customAlert(error);
         }
+        setLoading(false);
     };
 
     const logout = async () => {
+        setLoading(true);
         try {
             await auth().signOut();
             setUser(null);
@@ -98,6 +122,15 @@ export const AppProvider = ({children}) => {
             customAlert(error);
             console.log('Logout Error => ', error.message);
         }
+        setLoading(false);
+    };
+
+    const getUser = async doc => {
+        const querySnapShort = await firestore()
+            .collection('Users')
+            .doc(doc)
+            .get();      
+        setAllUser(querySnapShort.data());
     };
 
     return (
@@ -111,6 +144,9 @@ export const AppProvider = ({children}) => {
                 login,
                 register,
                 logout,
+                loading,
+                getUser,
+                allUser,
             }}>
             {children}
         </AppContext.Provider>
