@@ -93,7 +93,6 @@ const SubTitleContainer = props => (
     </View>
 );
 
-// FIXME:
 const TypeContainer = props => {
     const styles = StyleSheet.create({
         ViewStyle: {
@@ -111,31 +110,29 @@ const TypeContainer = props => {
             borderColor: props.colors.inActiveIconColor,
         },
     });
-    
+
     return (
         <ScrollView
             horizontal
             showsHorizontalScrollIndicator={false}
             contentContainerStyle={{marginVertical: 10, marginTop: 25}}>
-            {props.TypeData.map((item,index) => (
-                    <View style={[styles.ViewStyle]} key={index}>
-                        {item.item.map((item,index) => (
-                                <Pressable
-                                    key={index}
-                                    style={({pressed}) => [
-                                        {
-                                            backgroundColor: pressed
-                                                ? 'rgba(210, 230, 255,.3)'
-                                                : 'transparent',
-                                        },
-                                    ]}>
-                                    <Text style={styles.TextStyle}>{item}</Text>
-                                </Pressable>
-                            )
-                        )}
-                    </View>
-                )
-            )}
+            {props.TypeData.map((item, index) => (
+                <View style={[styles.ViewStyle]} key={index}>
+                    {item.item.map((item, index) => (
+                        <Pressable
+                            key={index}
+                            style={({pressed}) => [
+                                {
+                                    backgroundColor: pressed
+                                        ? 'rgba(210, 230, 255,.3)'
+                                        : 'transparent',
+                                },
+                            ]}>
+                            <Text style={styles.TextStyle}>{item}</Text>
+                        </Pressable>
+                    ))}
+                </View>
+            ))}
         </ScrollView>
     );
 };
@@ -291,7 +288,7 @@ const ListItem = ({colors, data}) => {
                         borderRadius: 3,
                         justifyContent: 'center',
                         alignItems: 'center',
-                        padding: 6,
+                        padding: 5,
                         marginHorizontal: 3,
                     }}>
                     <Text style={{color: colors.headingTextColor}}>
