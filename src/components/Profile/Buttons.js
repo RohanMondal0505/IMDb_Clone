@@ -1,11 +1,11 @@
-import { useTheme } from '@react-navigation/native';
+import {useTheme} from '@react-navigation/native';
 import React from 'react';
-import { Text, TouchableOpacity, View } from 'react-native';
-import { Strings } from '../../assets/values/Strings';
+import {Text, TouchableOpacity, View} from 'react-native';
+import {Strings} from '../../assets/values/Strings';
 
 const UserButtons = ({navigation}) => {
-    const { colors } = useTheme();
-    
+    const {colors} = useTheme();
+
     return (
         <View
             style={{
@@ -22,9 +22,33 @@ const UserButtons = ({navigation}) => {
                 }}>
                 {Strings.USER}
             </Text>
-            <Button title={Strings.Account} colors={colors} onPress={() => { navigation.navigate('Account');}}/>
-            <Button title={Strings.Watch_preferences} colors={colors} onPress={() => { console.log("Watch Preference")}}/>
-            <Button title={Strings.Notification} colors={colors} onPress={() => { console.log('Notification');}}/>
+            <Button
+                title={Strings.Account}
+                colors={colors}
+                onPress={() => {
+                    navigation.navigate('ProfileSecondScreen', {
+                        type: Strings.Account,
+                    });
+                }}
+            />
+            <Button
+                title={Strings.Watch_preferences}
+                colors={colors}
+                onPress={() => {
+                    navigation.navigate('ProfileSecondScreen', {
+                        type: Strings.Watch_preferences,
+                    });
+                }}
+            />
+            <Button
+                title={Strings.Notification}
+                colors={colors}
+                onPress={() => {
+                    navigation.navigate('ProfileSecondScreen', {
+                        type: Strings.Notification,
+                    });
+                }}
+            />
             <Text
                 style={{
                     color: colors.plusIconBackgroundColor,
@@ -35,16 +59,40 @@ const UserButtons = ({navigation}) => {
                 }}>
                 {Strings.GENERAL}
             </Text>
-            <Button title={Strings.Display} colors={colors} onPress={() => { console.log("Display")}}/>
-            <Button title={Strings.Storage} colors={colors} onPress={() => { console.log("Storage")}}/>
-            <Button title={Strings.About} colors={colors} onPress={() => { console.log("About")}} />
+            <Button
+                title={Strings.Display}
+                colors={colors}
+                onPress={() => {
+                    navigation.navigate('ProfileSecondScreen', {
+                        type: Strings.Display,
+                    });
+                }}
+            />
+            <Button
+                title={Strings.Storage}
+                colors={colors}
+                onPress={() => {
+                    navigation.navigate('ProfileSecondScreen', {
+                        type: Strings.Storage,
+                    });
+                }}
+            />
+            <Button
+                title={Strings.About}
+                colors={colors}
+                onPress={() => {
+                    navigation.navigate('ProfileSecondScreen', {
+                        type: Strings.About,
+                    });
+                }}
+            />
         </View>
     );
 };
 
 export default UserButtons;
 
-const Button = ({title, colors,onPress}) => (
+const Button = ({title, colors, onPress}) => (
     <TouchableOpacity
         onPress={onPress}
         activeOpacity={0.5}
