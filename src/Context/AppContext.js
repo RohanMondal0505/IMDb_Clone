@@ -11,7 +11,7 @@ export const AppProvider = ({children}) => {
     const {colors} = useTheme();
     const [user, setUser] = useState(null);
     const [loading, setLoading] = useState(false);
-    const [allUser, setAllUser] = useState([])
+    const [allUser, setAllUser] = useState([]);
 
     const setUserDataInAsyncStorage = async data => {
         try {
@@ -129,7 +129,7 @@ export const AppProvider = ({children}) => {
         const querySnapShort = await firestore()
             .collection('Users')
             .doc(doc)
-            .get();      
+            .get();
         setAllUser(querySnapShort.data());
     };
 
