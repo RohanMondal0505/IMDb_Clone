@@ -63,4 +63,8 @@ export const Strings = {
         'Password must be at least 8 characters.',
     Already_have_an_account: 'Already have an account',
     Sign_In_now: 'Sign-In now',
+    Don_have_any_watch_preferences: 'Don,t have any watch preferences',
+    NO_notification_right_now: 'NO notification right now',
+    Nothing_to_display: 'Nothing to display',
+    About_Text: 'This app made by MCA Students batch 2018',
 };
