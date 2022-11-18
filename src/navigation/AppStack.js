@@ -3,11 +3,9 @@ import {useNavigation, useTheme} from '@react-navigation/native';
 import React from 'react';
 import {Dimensions, Pressable, StatusBar} from 'react-native';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
-import HomeScreen from '../screens/HomeScreen';
-import ProfileScreen from '../screens/ProfileScreen';
 import SearchScreen from '../screens/SearchScreen';
 import VideosScreen from '../screens/VideosScreen';
-import { ProfileStackScreen } from './StackScreen';
+import {HomeStackScreen, ProfileStackScreen} from './StackScreen';
 
 const Tab = createBottomTabNavigator();
 
@@ -22,7 +20,7 @@ const BottomTabs = () => {
                 backgroundColor={colors.statusbarColor}
             />
             <Tab.Navigator
-                initialRouteName="Profile"
+                initialRouteName="Home"
                 screenOptions={({route}) => ({
                     headerShown: false,
                     tabBarActiveTintColor: colors.activeIconColor,
@@ -79,7 +77,7 @@ const BottomTabs = () => {
                         overflow: 'hidden',
                     },
                 })}>
-                <Tab.Screen name="Home" component={HomeScreen} />
+                <Tab.Screen name="Home" component={HomeStackScreen} />
                 <Tab.Screen name="Search" component={SearchScreen} />
                 <Tab.Screen name="Videos" component={VideosScreen} />
                 <Tab.Screen name="Profile" component={ProfileStackScreen} />
