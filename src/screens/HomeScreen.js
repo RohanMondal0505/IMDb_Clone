@@ -76,6 +76,7 @@ const HomeScreen = ({navigation}) => {
                 <Section
                     title={Strings.Popular_TV}
                     TypeData={TVTypeData}
+                    navigation={navigation}
                     data={TVData}
                 />
 
@@ -91,6 +92,7 @@ const HomeScreen = ({navigation}) => {
                 <Section
                     title={Strings.Popular_Indian_Comedy_Picks}
                     TypeData={TypeData}
+                    navigation={navigation}
                     data={comedyData}
                 />
 
@@ -98,6 +100,7 @@ const HomeScreen = ({navigation}) => {
                 <Section
                     title={Strings.Fan_Favorites}
                     TypeData={TypeData}
+                    navigation={navigation}
                     data={fanFavorites}
                 />
 
