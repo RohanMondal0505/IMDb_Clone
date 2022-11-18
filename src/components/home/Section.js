@@ -19,7 +19,6 @@ import TitleContainer from '../Custom/TitleContainer';
 
 const Section = props => {
     const {colors} = useTheme();
-
     const {height, width} = Dimensions.get('window');
 
     const styles = StyleSheet.create({
@@ -50,7 +49,11 @@ const Section = props => {
             ) : null}
 
             <TypeContainer colors={colors} TypeData={props.TypeData} />
-            <ListItems colors={colors} data={props.data} />
+            <ListItems
+                colors={colors}
+                data={props.data}
+                navigation={props.navigation}
+            />
         </View>
     );
 };
@@ -154,13 +157,18 @@ const ListItems = props => (
             showsHorizontalScrollIndicator={false}
             data={props.data}
             renderItem={({item, index}) => (
-                <ListItem key={index} colors={props.colors} data={item} />
+                <ListItem
+                    key={index}
+                    colors={props.colors}
+                    data={item}
+                    navigation={props.navigation}
+                />
             )}
         />
     </View>
 );
 
-const ListItem = ({colors, data}) => {
+const ListItem = ({colors, data, navigation}) => {
     let time = data.time;
     let h = Math.floor(time / 60);
     let m = time % 60;
@@ -168,7 +176,7 @@ const ListItem = ({colors, data}) => {
     return (
         <Pressable
             onPress={() => {
-                console.log(data.title);
+                navigation.navigate('SectionListDisplay', {data: data});
             }}
             onPressIn={() => setOverlay(true)}
             onPressOut={() => setOverlay(false)}
