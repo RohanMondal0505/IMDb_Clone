@@ -68,6 +68,7 @@ const HomeScreen = ({navigation}) => {
                 <Section
                     title={Strings.Popular_Movies}
                     TypeData={MovieTypeData}
+                    navigation={navigation}
                     data={movieData}
                 />
 
