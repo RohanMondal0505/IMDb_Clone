@@ -3,8 +3,11 @@ import React from 'react';
 import {createStackNavigator} from '@react-navigation/stack';
 import ProfileScreen from '../screens/ProfileScreen';
 import ProfileSecondScreen from '../screens/ProfileSecondScreen';
+import HomeScreen from '../screens/HomeScreen';
+import SectionListDisplayScreen from '../screens/SectionListDisplayScreen';
 
 const Profile = createStackNavigator();
+const Home = createStackNavigator();
 
 export const ProfileStackScreen = () => {
     return (
@@ -15,5 +18,16 @@ export const ProfileStackScreen = () => {
                 component={ProfileSecondScreen}
             />
         </Profile.Navigator>
+    );
+};
+export const HomeStackScreen = () => {
+    return (
+        <Home.Navigator screenOptions={{headerShown: false}}>
+            <Home.Screen name="HomeScreen" component={HomeScreen} />
+            <Home.Screen
+                name="SectionListDisplay"
+                component={SectionListDisplayScreen}
+            />
+        </Home.Navigator>
     );
 };
