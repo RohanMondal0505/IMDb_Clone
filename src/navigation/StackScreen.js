@@ -1,9 +1,9 @@
 import React from 'react';
 
 import {createStackNavigator} from '@react-navigation/stack';
+import HomeScreen from '../screens/HomeScreen';
 import ProfileScreen from '../screens/ProfileScreen';
 import ProfileSecondScreen from '../screens/ProfileSecondScreen';
-import HomeScreen from '../screens/HomeScreen';
 import SectionListDisplayScreen from '../screens/SectionListDisplayScreen';
 
 const Profile = createStackNavigator();
