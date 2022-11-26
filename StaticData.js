@@ -24,10 +24,7 @@ export const MovieTypeData = [
 
 export const TVTypeData = [
     {
-        item: [
-            'Other Providers',
-            'Prime Video',
-        ],
+        item: ['Other Providers', 'Prime Video'],
     },
     {
         item: ['Drama', 'Thriller', 'Crime', 'More...'],
@@ -49,6 +46,27 @@ export const TypeData = [
 ];
 
 export const movieData = [
+    {
+        image: 'https://m.media-amazon.com/images/M/MV5BYTZjNzI1ZTItOTE5Ny00MjBjLWE1NjUtOWRkZWVkOTk2OTZmXkEyXkFqcGdeQXVyOTI3MzI4MzA@._V1_FMjpg_UX1000_.jpg',
+        rating: 7.6,
+        title: 'Monica, O My Darling',
+        year: 2022,
+        time: 129,
+    },
+    {
+        image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS0iSjN7F6ZtocIqcBFGFtW1FfvCwTNw9S30uNmhNGiqRYH3J2dw3rv73YY4vCWaDr175c&usqp=CAU',
+        rating: 9.0,
+        title: 'Kantara',
+        year: 2022,
+        time: 148,
+    },
+    {
+        image: 'https://m.media-amazon.com/images/M/MV5BZmNjNGYxOGEtYjkwMC00YmQyLThjZTYtMThlMmY0MmIzZmRiXkEyXkFqcGdeQXVyMTkzOTcxOTg@._V1_.jpg',
+        rating: 7.9,
+        title: 'Uunchai',
+        year: 2022,
+        time: 173,
+    },
     {
         image: 'https://m.media-amazon.com/images/M/MV5BN2RjZDJhYzUtOTQ5Yy00OWM3LWE5OTctM2Y0YWVmNzAzODllXkEyXkFqcGdeQXVyMTA3MDk2NDg2._V1_.jpg',
         rating: 8.5,
@@ -108,6 +126,30 @@ export const movieData = [
 ];
 
 export const TVData = [
+    {
+        image: 'https://m.media-amazon.com/images/M/MV5BNDlkNzI2MWUtYTkyOS00MTkxLTg0YzctZmQwNjExYjQzOTc1XkEyXkFqcGdeQXVyMTExMTIzMTA5._V1_.jpg',
+        rating: 8.4,
+        title: 'College Romance',
+        year: 2018,
+        time: 40,
+        eps: 15,
+    },
+    {
+        image: 'https://m.media-amazon.com/images/M/MV5BYzM5ZjllNDYtMjRlYS00ODkzLWJiNTMtMTEyNzA0OGRjMzAzXkEyXkFqcGdeQXVyMTExMTIzMTA5._V1_.jpg',
+        rating: 7.4,
+        title: 'Flames',
+        year: 2018,
+        time: 30,
+        eps: 15,
+    },
+    {
+        image: 'https://m.media-amazon.com/images/M/MV5BNDI0YzMwMDktNzc1OS00N2QyLWFlNDMtZWJlODU2MjQ1YThiXkEyXkFqcGdeQXVyMTAyMTE1MDA1._V1_.jpg',
+        rating: 8.4,
+        title: 'Tanaav',
+        year: 2022,
+        time: 18,
+        eps: 12,
+    },
     {
         image: 'https://m.media-amazon.com/images/M/MV5BNTA2YzMyOWUtODAxNC00ZTI4LThiZWItMzMxYjYxOGFmMDUzXkEyXkFqcGdeQXVyMzE4NjMwMjc@._V1_.jpg',
         rating: 7.4,
