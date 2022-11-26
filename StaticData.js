@@ -353,6 +353,26 @@ export const bornToDay = [
         name: 'Emilia Clarke',
         age: '3 October 1986',
     },
+    {
+        image: 'https://m.media-amazon.com/images/M/MV5BODUwODZlMWQtY2Y0Ni00Yjg1LThlOGMtNmE3NzNjNWFiZjg1XkEyXkFqcGdeQXVyNDY3MjI1Mjg@._V1_.jpg',
+        name: 'Thea Sofie Loch Naess',
+        age: '26 November 1996',
+    },
+    {
+        image: 'https://m.media-amazon.com/images/M/MV5BYTE4YmYzOTItM2EzNy00ZWI3LWJkZDEtNmMyOTQ3M2JiNTk2XkEyXkFqcGdeQXVyMTc2Mzc3NzA@._V1_UX178_CR0,0,178,264_AL_.jpg',
+        name: 'Aubrey Peeples',
+        age: '26 November 1993',
+    },
+    {
+        image: 'https://m.media-amazon.com/images/M/MV5BMTZiZmUzZTgtMWQ3Yy00MjY4LTk2NWMtMmNjMzA2YTIxYTA4XkEyXkFqcGdeQXVyNzEwNjQwMTY@._V1_.jpg',
+        name: 'Peter Facinelli',
+        age: '26 November 1973',
+    },
+    {
+        image: 'https://m.media-amazon.com/images/M/MV5BMjIzOTI4MDAzNV5BMl5BanBnXkFtZTcwNDk4MzYxNw@@._V1_UY1200_CR107,0,630,1200_AL_.jpg',
+        name: 'Tamsin Egerton',
+        age: '26 November 1988',
+    },
 ];
 
 export const TopBox = [
