@@ -1,19 +1,18 @@
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import {useNavigation, useTheme} from '@react-navigation/native';
 import React from 'react';
-import {Pressable, StatusBar} from 'react-native';
+import {Dimensions, Pressable, StatusBar} from 'react-native';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
-import HomeScreen from '../screens/HomeScreen';
-import ProfileScreen from '../screens/ProfileScreen';
 import SearchScreen from '../screens/SearchScreen';
 import VideosScreen from '../screens/VideosScreen';
+import {HomeStackScreen, ProfileStackScreen} from './StackScreen';
 
 const Tab = createBottomTabNavigator();
-// const Tab = createMaterialBottomTabNavigator();
 
 const BottomTabs = () => {
     const navigation = useNavigation();
     const {colors} = useTheme();
+    const {height, width} = Dimensions.get('window');
     return (
         <>
             <StatusBar
@@ -44,9 +43,9 @@ const BottomTabs = () => {
                                             : null,
                                     },
                                     {
-                                        height: 180,
-                                        width: 180,
-                                        borderRadius: 100,
+                                        height: height * 0.18,
+                                        width: height * 0.17,
+                                        borderRadius: height * 0.8,
                                         justifyContent: 'center',
                                         alignItems: 'center',
                                         zIndex: 1,
@@ -78,10 +77,10 @@ const BottomTabs = () => {
                         overflow: 'hidden',
                     },
                 })}>
-                <Tab.Screen name="Home" component={HomeScreen} />
+                <Tab.Screen name="Home" component={HomeStackScreen} />
                 <Tab.Screen name="Search" component={SearchScreen} />
                 <Tab.Screen name="Videos" component={VideosScreen} />
-                <Tab.Screen name="Profile" component={ProfileScreen} />
+                <Tab.Screen name="Profile" component={ProfileStackScreen} />
             </Tab.Navigator>
         </>
     );

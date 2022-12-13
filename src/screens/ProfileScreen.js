@@ -1,18 +1,29 @@
 import {useTheme} from '@react-navigation/native';
 import React from 'react';
 
-import {Text, View} from 'react-native';
+import {SafeAreaView, StyleSheet, View} from 'react-native';
+import Buttons from '../components/profile/Buttons';
+import HeaderSection from '../components/profile/HeaderSection';
 
-const ProfileScreen = () => {
+const ProfileScreen = ({navigation}) => {
     const {colors} = useTheme();
+
+    const styles = StyleSheet.create({
+        MainContainer: {
+            flex: 1,
+            backgroundColor: colors.mainBackgroundColor,
+        },
+        Container: {
+            width: '100%',
+        },
+    });
     return (
-        <View
-            style={{
-                flex: 1,
-                backgroundColor: colors.mainBackgroundColor,
-            }}>
-            <Text>ProfileScreen</Text>
-        </View>
+        <SafeAreaView style={styles.MainContainer}>
+            <View style={styles.Container}>
+                <HeaderSection />
+                <Buttons navigation={navigation} />
+            </View>
+        </SafeAreaView>
     );
 };
 
