@@ -29,7 +29,7 @@ const SectionListDisplayScreen = ({navigation, route}) => {
     const {height, width} = Dimensions.get('window');
 
     const [addToWatch, setAddToWatch] = useState(false);
-    console.log(data.title);
+
     return (
         <View
             style={{
