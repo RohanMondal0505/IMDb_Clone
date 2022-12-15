@@ -62,7 +62,7 @@ const HomeScreen = ({navigation}) => {
                 }
                 contentContainerStyle={styles.Container}>
                 {/* Movie SLider */}
-                <MoviesSlider data={slideData} />
+                <MoviesSlider data={slideData} navigation={navigation} />
 
                 {/* Popular Indian Movie Section */}
                 <Section
