@@ -70,4 +70,5 @@ export const Strings = {
     User_Reviews: 'User Reviews',
     Details: 'Details',
     Technical_Specs: 'Technical Specs',
+    Box_Office: 'Box Office',
 };
