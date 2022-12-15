@@ -67,4 +67,7 @@ export const Strings = {
     NO_notification_right_now: 'NO notification right now',
     Nothing_to_display: 'Nothing to display',
     About_Text: 'This app made by MCA Students batch 2018',
+    User_Reviews: 'User Reviews',
+    Details: 'Details',
+    Technical_Specs: 'Technical Specs',
 };
