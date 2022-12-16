@@ -6,10 +6,13 @@ import ProfileScreen from '../screens/ProfileScreen';
 import ProfileSecondScreen from '../screens/ProfileSecondScreen';
 import SearchScreen from '../screens/SearchScreen';
 import SectionListDisplayScreen from '../screens/SectionListDisplayScreen';
+import VideosPlayScreen from '../screens/VideosPlayScreen';
+import VideosScreen from '../screens/VideosScreen';
 
 const Profile = createStackNavigator();
 const Home = createStackNavigator();
 const Search = createStackNavigator();
+const VStack = createStackNavigator();
 
 export const ProfileStackScreen = () => {
     return (
@@ -42,5 +45,13 @@ export const SearchStackScreen = () => {
                 component={SectionListDisplayScreen}
             />
         </Search.Navigator>
+    );
+};
+export const VideosStackScreen = () => {
+    return (
+        <VStack.Navigator screenOptions={{headerShown: false}}>
+            <VStack.Screen name="VideosScreen" component={VideosScreen} />
+            <Home.Screen name="VideosPlayScreen" component={VideosPlayScreen} />
+        </VStack.Navigator>
     );
 };
