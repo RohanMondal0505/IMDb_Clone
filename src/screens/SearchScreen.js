@@ -22,7 +22,6 @@ const SearchScreen = ({navigation}) => {
     const [mixData, setMixData] = useState(data);
 
     const searchFunction = text => {
-        console.log(search);
         if (text.length > 0) {
             const newData = mixData.filter(item => {
                 if (item != null) {
@@ -33,7 +32,6 @@ const SearchScreen = ({navigation}) => {
                     return itemData.indexOf(textData) > -1;
                 }
             });
-            console.log(newData);
             setMixData(newData);
         } else {
             setMixData(data);
