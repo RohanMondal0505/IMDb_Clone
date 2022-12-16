@@ -108,6 +108,16 @@ const SectionListDisplayScreen = ({navigation, route}) => {
                                 ]}>
                                 {h > 0 ? h + 'h' : null} {m}m
                             </Text>
+                            {data.season ? (
+                                <Text
+                                    style={[
+                                        styles.SubText,
+                                        {color: colors.textColor},
+                                    ]}>
+                                    {' '}
+                                    Season {data.season}
+                                </Text>
+                            ) : null}
                             {data.eps ? (
                                 <Text
                                     style={[
@@ -115,7 +125,7 @@ const SectionListDisplayScreen = ({navigation, route}) => {
                                         {color: colors.textColor},
                                     ]}>
                                     {' '}
-                                    {data.eps} eps
+                                    Total Eps {data.eps}
                                 </Text>
                             ) : null}
                         </View>
@@ -351,7 +361,9 @@ const SectionListDisplayScreen = ({navigation, route}) => {
                                 fontSize: 17,
                                 marginBottom: 8,
                             }}>
-                            Release Data
+                            {data.eps
+                                ? 'First Episode Release Data'
+                                : 'Release Data'}
                         </Text>
                         <Text
                             style={{
@@ -468,6 +480,29 @@ const SectionListDisplayScreen = ({navigation, route}) => {
                         elevation: 5,
                     }}>
                     <TitleContainer title={Strings.Technical_Specs} />
+                    {data.season ? (
+                        <View
+                            style={[
+                                styles.DetailsContainer,
+                                {borderColor: colors.overlayColor},
+                            ]}>
+                            <Text
+                                style={{
+                                    fontFamily: CustomFonts.Regular,
+                                    fontSize: 17,
+                                    marginBottom: 8,
+                                }}>
+                                Season
+                            </Text>
+                            <Text
+                                style={{
+                                    fontFamily: CustomFonts.Regular,
+                                    fontSize: 14,
+                                }}>
+                                {data.season}
+                            </Text>
+                        </View>
+                    ) : null}
                     <View style={{paddingVertical: 10, paddingHorizontal: 5}}>
                         <Text
                             style={{
