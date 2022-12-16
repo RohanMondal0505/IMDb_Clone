@@ -106,18 +106,30 @@ const SectionListDisplayScreen = ({navigation, route}) => {
                                     styles.SubText,
                                     {color: colors.textColor},
                                 ]}>
-                                {h}h {m}m
+                                {h > 0 ? h + 'h' : null} {m}m
                             </Text>
                         </View>
                     </View>
 
                     <View style={styles.VideoContainer}>
-                        <YoutubePlayer
-                            height={200}
-                            width={width}
-                            play={true}
-                            videoId={data.videoId}
-                        />
+                        {data.videoId ? (
+                            <YoutubePlayer
+                                height={200}
+                                width={width}
+                                play={true}
+                                videoId={data.videoId}
+                            />
+                        ) : (
+                            <Text
+                                style={{
+                                    color: '#fff',
+                                    fontSize: 20,
+                                    paddingHorizontal: 10,
+                                    paddingVertical: 10,
+                                }}>
+                                No Trailer Available
+                            </Text>
+                        )}
                     </View>
 
                     <View style={styles.PosterMainContainer}>
@@ -327,31 +339,33 @@ const SectionListDisplayScreen = ({navigation, route}) => {
                                 fontFamily: CustomFonts.Regular,
                                 fontSize: 14,
                             }}>
-                            {data.date}, {data.year}
+                            {data.date ? data.date + ',' : null} {data.year}
                         </Text>
                     </View>
 
-                    <View
-                        style={[
-                            styles.DetailsContainer,
-                            {borderColor: colors.overlayColor},
-                        ]}>
-                        <Text
-                            style={{
-                                fontFamily: CustomFonts.Regular,
-                                fontSize: 17,
-                                marginBottom: 8,
-                            }}>
-                            Country of Origin
-                        </Text>
-                        <Text
-                            style={{
-                                fontFamily: CustomFonts.Regular,
-                                fontSize: 14,
-                            }}>
-                            {data.origin}
-                        </Text>
-                    </View>
+                    {data.origin ? (
+                        <View
+                            style={[
+                                styles.DetailsContainer,
+                                {borderColor: colors.overlayColor},
+                            ]}>
+                            <Text
+                                style={{
+                                    fontFamily: CustomFonts.Regular,
+                                    fontSize: 17,
+                                    marginBottom: 8,
+                                }}>
+                                Country of Origin
+                            </Text>
+                            <Text
+                                style={{
+                                    fontFamily: CustomFonts.Regular,
+                                    fontSize: 14,
+                                }}>
+                                {data.origin}
+                            </Text>
+                        </View>
+                    ) : null}
 
                     {data.director ? (
                         <View
@@ -377,27 +391,29 @@ const SectionListDisplayScreen = ({navigation, route}) => {
                         </View>
                     ) : null}
 
-                    <View
-                        style={[
-                            styles.DetailsContainer,
-                            {borderBottomWidth: 0},
-                        ]}>
-                        <Text
-                            style={{
-                                fontFamily: CustomFonts.Regular,
-                                fontSize: 17,
-                                marginBottom: 8,
-                            }}>
-                            Language Spoken
-                        </Text>
-                        <Text
-                            style={{
-                                fontFamily: CustomFonts.Regular,
-                                fontSize: 14,
-                            }}>
-                            {data.language}
-                        </Text>
-                    </View>
+                    {data.language ? (
+                        <View
+                            style={[
+                                styles.DetailsContainer,
+                                {borderBottomWidth: 0},
+                            ]}>
+                            <Text
+                                style={{
+                                    fontFamily: CustomFonts.Regular,
+                                    fontSize: 17,
+                                    marginBottom: 8,
+                                }}>
+                                Language Spoken
+                            </Text>
+                            <Text
+                                style={{
+                                    fontFamily: CustomFonts.Regular,
+                                    fontSize: 14,
+                                }}>
+                                {data.language}
+                            </Text>
+                        </View>
+                    ) : null}
                 </View>
 
                 {/* Box Office */}
@@ -447,7 +463,7 @@ const SectionListDisplayScreen = ({navigation, route}) => {
                                 fontFamily: CustomFonts.Regular,
                                 fontSize: 14,
                             }}>
-                            {h}h {m}m
+                            {h > 0 ? h + 'h' : null} {m}m
                         </Text>
                     </View>
                 </View>
