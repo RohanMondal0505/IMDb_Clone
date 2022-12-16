@@ -4,10 +4,12 @@ import {createStackNavigator} from '@react-navigation/stack';
 import HomeScreen from '../screens/HomeScreen';
 import ProfileScreen from '../screens/ProfileScreen';
 import ProfileSecondScreen from '../screens/ProfileSecondScreen';
+import SearchScreen from '../screens/SearchScreen';
 import SectionListDisplayScreen from '../screens/SectionListDisplayScreen';
 
 const Profile = createStackNavigator();
 const Home = createStackNavigator();
+const Search = createStackNavigator();
 
 export const ProfileStackScreen = () => {
     return (
@@ -29,5 +31,16 @@ export const HomeStackScreen = () => {
                 component={SectionListDisplayScreen}
             />
         </Home.Navigator>
+    );
+};
+export const SearchStackScreen = () => {
+    return (
+        <Search.Navigator screenOptions={{headerShown: false}}>
+            <Search.Screen name="SearchScreen" component={SearchScreen} />
+            <Home.Screen
+                name="SectionListDisplay"
+                component={SectionListDisplayScreen}
+            />
+        </Search.Navigator>
     );
 };
