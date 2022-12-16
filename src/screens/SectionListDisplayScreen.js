@@ -362,7 +362,7 @@ const SectionListDisplayScreen = ({navigation, route}) => {
                                 marginBottom: 8,
                             }}>
                             {data.eps
-                                ? 'First Episode Release Data'
+                                ? 'First Season Release Data'
                                 : 'Release Data'}
                         </Text>
                         <Text
