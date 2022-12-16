@@ -71,4 +71,5 @@ export const Strings = {
     Details: 'Details',
     Technical_Specs: 'Technical Specs',
     Box_Office: 'Box Office',
+    Watch_more_videos_on: 'Watch more videos on',
 };
