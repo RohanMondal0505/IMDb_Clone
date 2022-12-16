@@ -3,9 +3,12 @@ import {useNavigation, useTheme} from '@react-navigation/native';
 import React from 'react';
 import {Dimensions, Pressable, StatusBar} from 'react-native';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
-import SearchScreen from '../screens/SearchScreen';
-import VideosScreen from '../screens/VideosScreen';
-import {HomeStackScreen, ProfileStackScreen} from './StackScreen';
+import {
+    HomeStackScreen,
+    ProfileStackScreen,
+    SearchStackScreen,
+    VideosStackScreen,
+} from './StackScreen';
 
 const Tab = createBottomTabNavigator();
 
@@ -78,8 +81,8 @@ const BottomTabs = () => {
                     },
                 })}>
                 <Tab.Screen name="Home" component={HomeStackScreen} />
-                <Tab.Screen name="Search" component={SearchScreen} />
-                <Tab.Screen name="Videos" component={VideosScreen} />
+                <Tab.Screen name="Search" component={SearchStackScreen} />
+                <Tab.Screen name="Videos" component={VideosStackScreen} />
                 <Tab.Screen name="Profile" component={ProfileStackScreen} />
             </Tab.Navigator>
         </>
