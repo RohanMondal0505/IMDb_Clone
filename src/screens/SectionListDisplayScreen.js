@@ -108,6 +108,16 @@ const SectionListDisplayScreen = ({navigation, route}) => {
                                 ]}>
                                 {h > 0 ? h + 'h' : null} {m}m
                             </Text>
+                            {data.eps ? (
+                                <Text
+                                    style={[
+                                        styles.SubText,
+                                        {color: colors.textColor},
+                                    ]}>
+                                    {' '}
+                                    {data.eps} eps
+                                </Text>
+                            ) : null}
                         </View>
                     </View>
 
@@ -174,8 +184,12 @@ const SectionListDisplayScreen = ({navigation, route}) => {
                                             ? Linking.openURL(
                                                   'https://www.netflix.com/in/',
                                               )
-                                            : Linking.openURL(
+                                            : data.watch == 'Hotstar'
+                                            ? Linking.openURL(
                                                   'https://www.hotstar.com/in',
+                                              )
+                                            : Linking.openURL(
+                                                  'https://www.youtube.com/',
                                               )
                                     }
                                     style={[
@@ -200,7 +214,10 @@ const SectionListDisplayScreen = ({navigation, route}) => {
                                                 fontSize: 20,
                                                 fontFamily: CustomFonts.Regular,
                                             }}>
-                                            Watch on {data.watch}
+                                            Watch on{' '}
+                                            {data.watch
+                                                ? data.watch
+                                                : 'Youtube'}
                                         </Text>
                                         <Text
                                             style={{
@@ -210,7 +227,9 @@ const SectionListDisplayScreen = ({navigation, route}) => {
                                             Go to{' '}
                                             {data.watch == 'Netflix'
                                                 ? 'netflix.com'
-                                                : 'hotstar.com'}
+                                                : data.watch == 'Hotstar'
+                                                ? 'hotstar.com'
+                                                : 'youtube.com'}
                                         </Text>
                                     </View>
                                 </TouchableOpacity>
