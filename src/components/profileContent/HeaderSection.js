@@ -13,6 +13,7 @@ const HeaderSection = () => {
     useEffect(() => {
         getUser(user.uid);
     }, []);
+    console.log(allUser);
 
     return (
         <View
@@ -39,7 +40,11 @@ const HeaderSection = () => {
                         fontSize: 22,
                         fontFamily: CustomFonts.Bold,
                     }}>
-                    {allUser.name}
+                    {allUser
+                        ? allUser.name
+                        : user.displayName
+                        ? user.displayName.split(' ')[0]
+                        : 'User'}
                 </Text>
             </View>
             <Pressable

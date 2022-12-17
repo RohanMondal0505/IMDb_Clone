@@ -1,4 +1,5 @@
 import AsyncStorage from '@react-native-async-storage/async-storage';
+import {GoogleSignin} from '@react-native-google-signin/google-signin';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import React, {useEffect, useState} from 'react';
 import LoginRoutesScreen from '../screens/AutStack/LoginRoutesScreen';
@@ -27,6 +28,10 @@ export default AutStack = () => {
 
     useEffect(() => {
         AlreadyLaunched();
+        GoogleSignin.configure({
+            webClientId:
+                '101643569051-d5e0jivt46lu0cm5962oucrtklp234q9.apps.googleusercontent.com',
+        });
     }, []);
 
     if (isFirstLaunch == null) return null;

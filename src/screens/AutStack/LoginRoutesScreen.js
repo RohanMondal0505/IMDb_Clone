@@ -1,12 +1,14 @@
 import {useTheme} from '@react-navigation/native';
 import React from 'react';
-import {Image, Text, TouchableOpacity, View} from 'react-native';
+import {Image, Platform, Text, TouchableOpacity, View} from 'react-native';
 import {CustomFonts} from '../../assets/values/CustomFonts';
 import {Images} from '../../assets/values/Images';
 import {Strings} from '../../assets/values/Strings';
+import {GlobalVariables} from '../../Context/AppContext';
 
 const LoginRoutesScreen = ({navigation}) => {
     const {colors} = useTheme();
+    const {googleLogin} = GlobalVariables();
     return (
         <View
             style={{
@@ -38,20 +40,24 @@ const LoginRoutesScreen = ({navigation}) => {
                 image={Images.IMDb_App_Icon}
                 onPress={() => navigation.navigate('Login')}
             />
-            <SocialButton
-                colors={colors.white}
-                text={Strings.SIGN_WITH_GOOGLE}
-                backgroundColor={colors.googleIcon}
-                image={Images.google}
-                onPress={() => console.log('Google')}
-            />
-            <SocialButton
-                colors={colors.white}
-                text={Strings.SIGN_WITH_FACEBOOK}
-                backgroundColor={colors.facebookIcon}
-                image={Images.facebook}
-                onPress={() => console.log('Facebook')}
-            />
+            {Platform.OS === 'android' ? (
+                <>
+                    <SocialButton
+                        colors={colors.white}
+                        text={Strings.SIGN_WITH_GOOGLE}
+                        backgroundColor={colors.googleIcon}
+                        image={Images.google}
+                        onPress={() => googleLogin()}
+                    />
+                    <SocialButton
+                        colors={colors.white}
+                        text={Strings.SIGN_WITH_FACEBOOK}
+                        backgroundColor={colors.facebookIcon}
+                        image={Images.facebook}
+                        onPress={() => console.log('Facebook')}
+                    />
+                </>
+            ) : null}
             <Text
                 style={{
                     fontSize: 22,

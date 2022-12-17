@@ -14,6 +14,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "101643569051-fvjnnd8l2gb9s7juk6daj85olvofhrie.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.imdb_clone",
+            "certificate_hash": "5e8f16062ea3cd2c4a0d547876baa6f38cabf625"
+          }
+        },
+        {
           "client_id": "101643569051-d5e0jivt46lu0cm5962oucrtklp234q9.apps.googleusercontent.com",
           "client_type": 3
         }

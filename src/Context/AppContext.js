@@ -1,6 +1,7 @@
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import auth from '@react-native-firebase/auth';
 import firestore from '@react-native-firebase/firestore';
+import {GoogleSignin} from '@react-native-google-signin/google-signin';
 import {useTheme} from '@react-navigation/native';
 import React, {createContext, useContext, useEffect, useState} from 'react';
 import {Alert} from 'react-native';
@@ -65,6 +66,19 @@ export const AppProvider = ({children}) => {
             else if (error === 'password empty')
                 customAlert('Warning !!', 'Password is Empty, Please Fill in');
             else console.log(error);
+        }
+        setLoading(false);
+    };
+
+    const googleLogin = async () => {
+        setLoading(true);
+        try {
+            const {idToken} = await GoogleSignin.signIn();
+            const googleCredential =
+                auth.GoogleAuthProvider.credential(idToken);
+            auth().signInWithCredential(googleCredential);
+        } catch (error) {
+            customAlert(error);
         }
         setLoading(false);
     };
@@ -142,6 +156,7 @@ export const AppProvider = ({children}) => {
                 setUserDataInAsyncStorage,
                 customAlert,
                 login,
+                googleLogin,
                 register,
                 logout,
                 loading,
