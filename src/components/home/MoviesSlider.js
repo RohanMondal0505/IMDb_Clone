@@ -61,9 +61,13 @@ const MoviesSlider = props => {
                         key={index}
                         activeOpacity={0.5}
                         style={styles.TouchableContainer}
-                        onPress={() => console.log(`Clicked ${index} `)}>
+                        onPress={() => {
+                            props.navigation.navigate('SectionListDisplay', {
+                                data: item,
+                            });
+                        }}>
                         <ImageBackground
-                            source={{uri: item}}
+                            source={{uri: item.image}}
                             style={styles.ImageBackgroundStyle}>
                             <AntDesign
                                 name="playcircleo"

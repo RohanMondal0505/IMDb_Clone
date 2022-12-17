@@ -2,8 +2,8 @@ import {useTheme} from '@react-navigation/native';
 import React from 'react';
 
 import {SafeAreaView, StyleSheet, View} from 'react-native';
-import Buttons from '../components/profile/Buttons';
 import HeaderSection from '../components/profile/HeaderSection';
+import UserButtons from '../components/profile/UserButtons';
 
 const ProfileScreen = ({navigation}) => {
     const {colors} = useTheme();
@@ -17,11 +17,12 @@ const ProfileScreen = ({navigation}) => {
             width: '100%',
         },
     });
+
     return (
         <SafeAreaView style={styles.MainContainer}>
             <View style={styles.Container}>
                 <HeaderSection />
-                <Buttons navigation={navigation} />
+                <UserButtons navigation={navigation} />
             </View>
         </SafeAreaView>
     );
