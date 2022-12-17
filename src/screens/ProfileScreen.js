@@ -2,8 +2,8 @@ import {useTheme} from '@react-navigation/native';
 import React from 'react';
 
 import {SafeAreaView, StyleSheet, View} from 'react-native';
-import HeaderSection from '../components/profile/HeaderSection';
-import UserButtons from '../components/profile/UserButtons';
+import HeaderSection from '../components/profileContent/HeaderSection';
+import UserButtons from '../components/profileContent/UserButtons';
 
 const ProfileScreen = ({navigation}) => {
     const {colors} = useTheme();
