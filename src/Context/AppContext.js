@@ -76,7 +76,14 @@ export const AppProvider = ({children}) => {
             const {idToken} = await GoogleSignin.signIn();
             const googleCredential =
                 auth.GoogleAuthProvider.credential(idToken);
-            auth().signInWithCredential(googleCredential);
+            const result = await auth().signInWithCredential(googleCredential);
+            if (result.additionalUserInfo.isNewUser == true) {
+                firestore().collection('Users').doc(result.user.uid).set({
+                    name: result.user.displayName,
+                    email: result.user.email,
+                    uid: result.user.uid,
+                });
+            }
         } catch (error) {
             customAlert(error);
         }
