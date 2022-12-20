@@ -625,9 +625,19 @@ export const bornToDay = [
         age: '26 November 1973',
     },
     {
-        image: 'https://m.media-amazon.com/images/M/MV5BMjIzOTI4MDAzNV5BMl5BanBnXkFtZTcwNDk4MzYxNw@@._V1_UY1200_CR107,0,630,1200_AL_.jpg',
-        name: 'Tamsin Egerton',
-        age: '26 November 1988',
+        image: 'https://media.glamour.com/photos/5d82ac789e98e20009821d34/3:2/w_2700,h_1800,c_limit/0918_kaitlyn_lede_social_river.jpg',
+        name: 'kaitlyn dever',
+        age: '21 December 1996',
+    },
+    {
+        image: 'https://i2.cinestaan.com/image-bank/1500-1500/89001-90000/89714.jpg',
+        name: 'aishwarya devan',
+        age: '21 December 1993',
+    },
+    {
+        image: 'https://aniportalimages.s3.amazonaws.com/media/details/rfeutfufihuirf.jfif',
+        name: 'Tamannaah',
+        age: '21 December 1989',
     },
 ];
 
