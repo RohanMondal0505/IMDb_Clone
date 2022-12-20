@@ -625,6 +625,11 @@ export const bornToDay = [
         age: '26 November 1973',
     },
     {
+        image: 'https://thepuristonline.com/wp-content/uploads/2018/09/Screen-Shot-2018-09-28-at-2.43.28-PM-1024x675.png',
+        name: 'Emily Mortimer',
+        age: '20 December 1971',
+    },
+    {
         image: 'https://media.glamour.com/photos/5d82ac789e98e20009821d34/3:2/w_2700,h_1800,c_limit/0918_kaitlyn_lede_social_river.jpg',
         name: 'kaitlyn dever',
         age: '21 December 1996',
