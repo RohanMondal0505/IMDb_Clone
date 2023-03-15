@@ -13,10 +13,11 @@ import YoutubePlayer from 'react-native-youtube-iframe';
 import {CustomFonts} from '../assets/values/CustomFonts';
 import {Strings} from '../assets/values/Strings';
 
+const { height, width } = Dimensions.get('window');
 const VideosPlayScreen = ({navigation, route}) => {
     const {colors} = useTheme();
     const {data} = route.params;
-    const {height, width} = Dimensions.get('window');
+    
 
     return (
         <View
@@ -56,7 +57,7 @@ const VideosPlayScreen = ({navigation, route}) => {
                 <View style={styles.VideoContainer}>
                     {data.videoId ? (
                         <YoutubePlayer
-                            height={200}
+                            height={'100%'}
                             width={width}
                             play={true}
                             videoId={data.videoId}
@@ -108,7 +109,7 @@ const styles = StyleSheet.create({
     Container: {},
     VideoContainer: {
         width: '100%',
-        height: 200,
+        height: height * .4,
         backgroundColor: 'black',
     },
     TextContainer: {

@@ -19,6 +19,7 @@ import {Strings} from '../assets/values/Strings';
 import TitleContainer from '../components/Custom/TitleContainer';
 import Social from '../components/home/Social';
 
+const {height, width} = Dimensions.get('window');
 const SectionListDisplayScreen = ({navigation, route}) => {
     const {colors} = useTheme();
     const {data} = route.params;
@@ -26,10 +27,8 @@ const SectionListDisplayScreen = ({navigation, route}) => {
     let h = Math.floor(time / 60);
     let m = time % 60;
 
-    const {height, width} = Dimensions.get('window');
-
     const [addToWatch, setAddToWatch] = useState(false);
-
+    
     return (
         <View
             style={{
@@ -134,7 +133,7 @@ const SectionListDisplayScreen = ({navigation, route}) => {
                     <View style={styles.VideoContainer}>
                         {data.videoId ? (
                             <YoutubePlayer
-                                height={200}
+                                height={'100%'}
                                 width={width}
                                 play={true}
                                 videoId={data.videoId}
@@ -547,7 +546,7 @@ const styles = StyleSheet.create({
     },
     VideoContainer: {
         width: '100%',
-        height: 200,
+        height: height * .4,
         backgroundColor: 'black',
     },
     PosterMainContainer: {

@@ -40,7 +40,7 @@ const HeaderSection = () => {
                         fontSize: 22,
                         fontFamily: CustomFonts.Bold,
                     }}>
-                    {allUser ? allUser.name.split(' ')[0] : 'User'}
+                    {allUser ? allUser.name : 'User'}
                 </Text>
             </View>
             <Pressable
